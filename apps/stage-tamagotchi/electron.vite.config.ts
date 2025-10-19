@@ -1,0 +1,135 @@
+import { join, resolve } from 'node:path'
+
+import VueI18n from '@intlify/unplugin-vue-i18n/vite'
+import Vue from '@vitejs/plugin-vue'
+import UnoCss from 'unocss/vite'
+import VueMacros from 'unplugin-vue-macros/vite'
+import VueRouter from 'unplugin-vue-router/vite'
+import Yaml from 'unplugin-yaml/vite'
+import Inspect from 'vite-plugin-inspect'
+import VitePluginVueDevTools from 'vite-plugin-vue-devtools'
+import Layouts from 'vite-plugin-vue-layouts'
+
+import { Download } from '@proj-nimara/unplugin-fetch'
+import { DownloadLive2DSDK } from '@proj-nimara/unplugin-live2d-sdk'
+import { templateCompilerOptions } from '@tresjs/core'
+import { defineConfig, externalizeDepsPlugin } from 'electron-vite'
+
+export default defineConfig({
+  main: {
+    plugins: [externalizeDepsPlugin()],
+  },
+  preload: {
+    plugins: [externalizeDepsPlugin()],
+  },
+  renderer: {
+    // Thanks to [@Maqsyo](https://github.com/Maqsyo)
+    // https://github.com/alex8088/electron-vite/issues/99#issuecomment-1862671727
+    base: './',
+    optimizeDeps: {
+      exclude: [
+        // Internal Packages
+        '@proj-nimara/stage-ui/*',
+        '@proj-nimara/drizzle-duckdb-wasm',
+        '@proj-nimara/drizzle-duckdb-wasm/*',
+
+        // Static Assets: Models, Images, etc.
+        'src/renderer/public/assets/*',
+
+        // Live2D SDK
+        '@framework/live2dcubismframework',
+        '@framework/math/cubismmatrix44',
+        '@framework/type/csmvector',
+        '@framework/math/cubismviewmatrix',
+        '@framework/cubismdefaultparameterid',
+        '@framework/cubismmodelsettingjson',
+        '@framework/effect/cubismbreath',
+        '@framework/effect/cubismeyeblink',
+        '@framework/model/cubismusermodel',
+        '@framework/motion/acubismmotion',
+        '@framework/motion/cubismmotionqueuemanager',
+        '@framework/type/csmmap',
+        '@framework/utils/cubismdebug',
+        '@framework/model/cubismmoc',
+      ],
+    },
+    resolve: {
+      alias: {
+        '@proj-nimara/server-sdk': resolve(join(import.meta.dirname, '..', '..', 'packages', 'server-sdk', 'src')),
+        '@proj-nimara/i18n': resolve(join(import.meta.dirname, '..', '..', 'packages', 'i18n', 'src')),
+        '@proj-nimara/stage-ui': resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-ui', 'src')),
+        '@proj-nimara/stage-pages': resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-pages', 'src')),
+        '@proj-nimara/stage-shared': resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-shared', 'src')),
+      },
+    },
+    server: {
+      warmup: {
+        clientFiles: [
+          `${resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-ui', 'src'))}/*.vue`,
+          `${resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-pages', 'src'))}/*.vue`,
+        ],
+      },
+    },
+
+    plugins: [
+      {
+        name: 'proj-nimara:define-runtime-environment',
+        config(ctx) {
+          if (ctx.mode === 'production') {
+            return {
+              define: {
+                'import.meta.env.RUNTIME_ENVIRONMENT': '\'electron\'',
+              },
+            }
+          }
+        },
+      },
+
+      Inspect(),
+
+      Yaml(),
+
+      VueMacros({
+        plugins: {
+          vue: Vue({
+            include: [/\.vue$/, /\.md$/],
+            ...templateCompilerOptions,
+          }),
+          vueJsx: false,
+        },
+        betterDefine: false,
+      }),
+
+      VueRouter({
+        dts: resolve(import.meta.dirname, 'src/renderer/typed-router.d.ts'),
+        routesFolder: [
+          resolve(import.meta.dirname, 'src', 'renderer', 'pages'),
+          resolve(import.meta.dirname, '..', '..', 'packages', 'stage-pages', 'src', 'pages'),
+        ],
+      }),
+
+      VitePluginVueDevTools(),
+
+      // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
+      Layouts({
+        layoutsDirs: [resolve(import.meta.dirname, 'src', 'renderer', 'layouts')],
+        pagesDirs: [resolve(import.meta.dirname, 'src', 'renderer', 'pages')],
+      }),
+
+      UnoCss(),
+
+      // https://github.com/intlify/bundle-tools/tree/main/packages/unplugin-vue-i18n
+      VueI18n({
+        runtimeOnly: true,
+        compositionOnly: true,
+        fullInstall: true,
+      }),
+
+      DownloadLive2DSDK(),
+      Download('https://dist.ayaka.moe/live2d-models/hiyori_free_zh.zip', 'hiyori_free_zh.zip', 'assets/live2d/models'),
+      Download('https://dist.ayaka.moe/live2d-models/hiyori_pro_zh.zip', 'hiyori_pro_zh.zip', 'assets/live2d/models'),
+      Download('https://dist.ayaka.moe/vrm-models/VRoid-Hub/AvatarSample-A/AvatarSample_A.vrm', 'AvatarSample_A.vrm', 'assets/vrm/models/AvatarSample-A'),
+      Download('https://dist.ayaka.moe/vrm-models/VRoid-Hub/AvatarSample-B/AvatarSample_B.vrm', 'AvatarSample_B.vrm', 'assets/vrm/models/AvatarSample-B'),
+    ],
+  },
+})

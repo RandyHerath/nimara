@@ -1,0 +1,45 @@
+{
+  "name": "@proj-nimara/server-runtime",
+  "type": "module",
+  "version": "0.7.2-beta.3",
+  "description": "Server runtime implementation for NIMARA running in different environments",
+  "author": {
+    "name": "Moeru AI Project NIMARA Team",
+    "email": "nimara@moeru.ai",
+    "url": "https://github.com/moeru-ai"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moeru-ai/nimara.git",
+    "directory": "packages/server-runtime"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "README.md",
+    "dist",
+    "package.json"
+  ],
+  "scripts": {
+    "dev": "listhen -w --ws --port 6121 ./src/index.ts",
+    "start": "listhen --ws --port 6121 ./src/index.ts",
+    "build": "tsdown",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@guiiai/logg": "catalog:",
+    "@proj-nimara/server-shared": "workspace:*",
+    "crossws": "^0.4.1",
+    "h3": "^2.0.1-rc.2",
+    "listhen": "^1.9.0"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "@proj-nimara/chromatic",
+  "type": "module",
+  "version": "1.0.2",
+  "private": true,
+  "description": "Chromatic color utilities shared across Project NIMARA.",
+  "author": {
+    "name": "Project NIMARA Team",
+    "email": "nimara@moeru.ai",
+    "url": "https://github.com/moeru-ai"
+  },
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "culori": "^4.0.2"
+  },
+  "devDependencies": {
+    "@types/culori": "^4.0.1",
+    "@unocss/core": "^66.5.3"
+  }
+}

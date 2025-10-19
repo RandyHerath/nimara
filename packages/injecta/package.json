@@ -1,0 +1,30 @@
+{
+  "name": "@proj-nimara/injecta",
+  "type": "module",
+  "private": true,
+  "description": "Dependency Injection (DI) utilities",
+  "author": {
+    "name": "Moeru AI Project NIMARA Team",
+    "email": "nimara@moeru.ai",
+    "url": "https://github.com/moeru-ai"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moeru-ai/nimara.git",
+    "directory": "packages/injecta"
+  },
+  "exports": {
+    ".": {
+      "type": "./dist/index.d.mjs",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsdown"
+  },
+  "dependencies": {
+    "@guiiai/logg": "catalog:"
+  }
+}

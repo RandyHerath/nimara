@@ -1,0 +1,30 @@
+{
+  "name": "@proj-nimara/lobe-icons",
+  "type": "module",
+  "version": "1.0.13",
+  "private": true,
+  "description": "Iconify JSON icon set curated for Project NIMARA surfaces.",
+  "author": {
+    "name": "Project NIMARA Team",
+    "email": "nimara@moeru.ai",
+    "url": "https://github.com/moeru-ai"
+  },
+  "license": "MIT",
+  "exports": {
+    "./*": "./*",
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.mjs"
+    },
+    "./icons.json": "./dist/icons.json",
+    "./info.json": "./dist/info.json",
+    "./metadata.json": "./dist/metadata.json"
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ]
+}

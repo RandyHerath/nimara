@@ -1,0 +1,23 @@
+{
+  "name": "@proj-nimara/stage-shared",
+  "type": "module",
+  "private": true,
+  "description": "Shared",
+  "author": {
+    "name": "Moeru AI Project NIMARA Team",
+    "email": "nimara@moeru.ai",
+    "url": "https://github.com/moeru-ai"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moeru-ai/nimara.git",
+    "directory": "packages/stage-shared"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  }
+}

@@ -1,0 +1,45 @@
+appId: ai.moeru.nimara
+productName: NIMARA
+directories:
+  buildResources: build
+files:
+  - '!**/.vscode/*'
+  - '!src/*'
+  - '!electron.vite.config.{js,ts,mjs,cjs}'
+  - '!vite.config.{js,ts,mjs,cjs}'
+  - '!uno.config.{js,ts,mjs,cjs}'
+  - '!{.eslintcache,eslint.config.ts,.yaml,dev-app-update.yml,CHANGELOG.md,README.md}'
+  - '!{.env,.env.*,.npmrc,pnpm-lock.yaml}'
+  - '!{tsconfig.json}'
+asarUnpack:
+  - resources/**
+win:
+  executableName: NIMARA
+nsis:
+  artifactName: ${productName}-${version}-windows-${arch}-setup.${ext}
+  shortcutName: ${productName}
+  uninstallDisplayName: ${productName}
+  createDesktopShortcut: always
+  deleteAppDataOnUninstall: true
+mac:
+  entitlementsInherit: build/entitlements.mac.plist
+  extendInfo:
+    - NSDocumentsFolderUsageDescription: Application requests access to the user's Documents folder.
+    - NSDownloadsFolderUsageDescription: Application requests access to the user's Downloads folder.
+  notarize: false
+  executableName: NIMARA
+dmg:
+  artifactName: ${productName}-${version}-darwin-${arch}.${ext}
+linux:
+  target:
+    - AppImage
+  maintainer: moeru.ai
+  category: Utility
+  executableName: NIMARA
+  artifactName: ${productName}-${version}-linux-${arch}.${ext}
+appImage:
+  artifactName: ${productName}-${version}-linux-${arch}.${ext}
+npmRebuild: false
+publish:
+  provider: generic
+  url: https://example.com/auto-updates

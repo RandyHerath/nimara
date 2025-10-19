@@ -1,0 +1,36 @@
+{
+  "name": "@proj-nimara/unplugin-live2d-sdk",
+  "type": "module",
+  "version": "0.1.6",
+  "private": true,
+  "description": "Vite plugin to download the Live2D Cubism SDK assets for NIMARA tooling.",
+  "author": {
+    "name": "Project NIMARA Team",
+    "email": "nimara@moeru.ai",
+    "url": "https://github.com/moeru-ai"
+  },
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./dist/vite/index.d.ts",
+      "import": "./dist/vite/index.mjs",
+      "require": "./dist/vite/index.cjs"
+    },
+    "./vite": {
+      "types": "./dist/vite/index.d.ts",
+      "import": "./dist/vite/index.mjs",
+      "node": "./dist/vite/index.cjs"
+    }
+  },
+  "main": "./dist/vite/index.cjs",
+  "module": "./dist/vite/index.mjs",
+  "types": "./dist/vite/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "ofetch": "^1.4.1",
+    "vite": "^7.1.9",
+    "yauzl": "^3.2.0"
+  }
+}

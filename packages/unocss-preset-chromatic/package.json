@@ -1,0 +1,30 @@
+{
+  "name": "@proj-nimara/unocss-preset-chromatic",
+  "type": "module",
+  "version": "1.0.2",
+  "private": true,
+  "description": "UnoCSS preset providing the chromatic palette used across Project NIMARA.",
+  "author": {
+    "name": "Project NIMARA Team",
+    "email": "nimara@moeru.ai",
+    "url": "https://github.com/moeru-ai"
+  },
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "node": "./dist/index.node.mjs",
+      "default": "./dist/index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@unocss/core": "^66.5.3"
+  }
+}

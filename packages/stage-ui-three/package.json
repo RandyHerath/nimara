@@ -1,0 +1,44 @@
+{
+  "name": "@proj-nimara/stage-ui-three",
+  "type": "module",
+  "private": true,
+  "description": "A collection of 3D scene components that used by Project NIMARA",
+  "author": {
+    "name": "Moeru AI Project NIMARA Team",
+    "email": "nimara@moeru.ai",
+    "url": "https://github.com/moeru-ai"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moeru-ai/nimara.git",
+    "directory": "packages/stage-ui-three"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "@pixiv/three-vrm": "^3.4.2",
+    "@pixiv/three-vrm-animation": "^3.4.2",
+    "@pixiv/three-vrm-core": "^3.4.2",
+    "@proj-nimara/stage-shared": "workspace:*",
+    "@proj-nimara/tresjs": "workspace:*",
+    "@tresjs/cientos": "^5.1.0",
+    "@tresjs/core": "^5.1.0",
+    "@vueuse/core": "^13.9.0",
+    "culori": "^4.0.2",
+    "pinia": "^3.0.3",
+    "postprocessing": "^6.37.8",
+    "three": "^0.180.0",
+    "vue": "^3.5.22",
+    "wlipsync": "^1.2.1"
+  },
+  "devDependencies": {
+    "@types/culori": "^4.0.1",
+    "@types/three": "^0.180.0",
+    "vue-tsc": "^3.1.1"
+  }
+}

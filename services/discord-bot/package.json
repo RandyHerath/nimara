@@ -1,0 +1,40 @@
+{
+  "name": "@proj-nimara/discord-bot",
+  "type": "module",
+  "private": true,
+  "description": "Discord bot for NIMARA",
+  "author": {
+    "name": "Moeru AI Project NIMARA Team",
+    "email": "nimara@moeru.ai",
+    "url": "https://github.com/moeru-ai"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moeru-ai/nimara.git",
+    "directory": "services/discord-bot"
+  },
+  "scripts": {
+    "start": "dotenvx run -f .env -f .env.local --overload --ignore=MISSING_ENV_FILE -- tsx src/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@discordjs/voice": "^0.19.0",
+    "@dotenvx/dotenvx": "^1.51.0",
+    "@guiiai/logg": "catalog:",
+    "@huggingface/transformers": "^3.7.5",
+    "@proj-nimara/audio": "workspace:*",
+    "@proj-nimara/server-sdk": "workspace:*",
+    "@proj-nimara/server-shared": "workspace:*",
+    "@xsai-ext/providers-cloud": "catalog:",
+    "@xsai/generate-speech": "catalog:",
+    "@xsai/generate-text": "catalog:",
+    "@xsai/generate-transcription": "catalog:",
+    "@xsai/shared-chat": "catalog:",
+    "discord.js": "^14.23.0",
+    "libsodium-wrappers": "^0.7.15",
+    "opusscript": "^0.1.1",
+    "tsx": "^4.20.6",
+    "wavefile": "^11.0.0"
+  }
+}
