@@ -11,6 +11,5 @@
   ],
   "installCommand": "pnpm install --frozen-lockfile",
   "buildCommand": "pnpm --filter=@proj-nimara/stage-web run build",
-  "outputDirectory": "apps/stage-web/dist",
-  "rootDirectory": "apps/stage-web"
+  "outputDirectory": "apps/stage-web/dist"
 }
