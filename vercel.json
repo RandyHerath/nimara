@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "apps/stage-web/**/*",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "apps/stage-web/dist"
+      }
+    }
+  ],
+  "installCommand": "pnpm install --frozen-lockfile",
+  "buildCommand": "pnpm --filter=@proj-nimara/stage-web run build",
+  "outputDirectory": "apps/stage-web/dist",
+  "rootDirectory": "apps/stage-web"
+}
