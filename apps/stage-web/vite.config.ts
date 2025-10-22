@@ -1,5 +1,6 @@
 import { join, resolve } from 'node:path'
 import { cwd, env } from 'node:process'
+import { pathToFileURL } from 'node:url'
 
 import VueI18n from '@intlify/unplugin-vue-i18n/vite'
 import Vue from '@vitejs/plugin-vue'
@@ -11,12 +12,60 @@ import Yaml from 'unplugin-yaml/vite'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import Layouts from 'vite-plugin-vue-layouts'
 
-import { Download } from '@proj-airi/unplugin-fetch/vite'
-import { DownloadLive2DSDK } from '@proj-airi/unplugin-live2d-sdk/vite'
 import { templateCompilerOptions } from '@tresjs/core'
 import { LFS, SpaceCard } from 'hfup/vite'
 import { defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
+
+type PluginFactory = (...args: any[]) => {
+  name: string
+  [key: string]: unknown
+}
+
+const fallbackMap: Record<string, string> = {
+  '@proj-airi/unplugin-fetch/vite': resolve(import.meta.dirname, '..', '..', 'packages', 'unplugin-fetch', 'dist', 'vite', 'index.mjs'),
+  '@proj-airi/unplugin-live2d-sdk/vite': resolve(import.meta.dirname, '..', '..', 'packages', 'unplugin-live2d-sdk', 'dist', 'vite', 'index.mjs'),
+}
+
+async function loadOptionalPlugin(
+  moduleSpecifier: string,
+  exportName: string,
+): Promise<PluginFactory> {
+  const candidates = [
+    moduleSpecifier,
+    ...(fallbackMap[moduleSpecifier] ? [pathToFileURL(fallbackMap[moduleSpecifier]).href] : []),
+  ]
+
+  let lastError: unknown
+
+  try {
+    for (const candidate of candidates) {
+      try {
+        const mod = await import(candidate) as Record<string, unknown>
+        const resolver = mod[exportName]
+        if (typeof resolver === 'function')
+          return resolver as PluginFactory
+        lastError = new Error(`Export "${exportName}" is not a function on module "${candidate}".`)
+      }
+      catch (error) {
+        lastError = error
+      }
+    }
+
+    throw lastError ?? new Error('Unknown plugin resolution error.')
+  }
+  catch (error) {
+    const reason = error instanceof Error ? error.message : String(error)
+    console.warn(`[stage-web] Optional plugin "${moduleSpecifier}" unavailable (${reason}). Continuing without it.`)
+
+    return (() => ({
+      name: `noop:${moduleSpecifier}`,
+    })) as PluginFactory
+  }
+}
+
+const Download = await loadOptionalPlugin('@proj-airi/unplugin-fetch/vite', 'Download')
+const DownloadLive2DSDK = await loadOptionalPlugin('@proj-airi/unplugin-live2d-sdk/vite', 'DownloadLive2DSDK')
 
 export default defineConfig({
   optimizeDeps: {

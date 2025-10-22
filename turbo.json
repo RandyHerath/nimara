@@ -1,5 +1,11 @@
 {
   "$schema": "https://turborepo.com/schema.json",
+  "globalEnv": [
+    "VITE_GEMINI_API_KEY",
+    "VITE_GEMINI_BASE_URL",
+    "VITE_CONSCIOUSNESS_PROVIDER",
+    "VITE_CONSCIOUSNESS_MODEL"
+  ],
   "tasks": {
     "build": {
       "outputs": ["dist/**"]
