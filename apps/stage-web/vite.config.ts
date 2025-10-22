@@ -1,3 +1,4 @@
+import { existsSync } from 'node:fs'
 import { join, resolve } from 'node:path'
 import { cwd, env } from 'node:process'
 import { pathToFileURL } from 'node:url'
@@ -67,6 +68,20 @@ async function loadOptionalPlugin(
 const Download = await loadOptionalPlugin('@proj-airi/unplugin-fetch/vite', 'Download')
 const DownloadLive2DSDK = await loadOptionalPlugin('@proj-airi/unplugin-live2d-sdk/vite', 'DownloadLive2DSDK')
 
+const workspaceRoot = resolve(join(import.meta.dirname, '..', '..'))
+const localModulePath = (relative: string) => resolve(join(workspaceRoot, relative))
+
+const drizzleDistPath = localModulePath('packages/drizzle-duckdb-wasm/dist/index.mjs')
+const drizzleBundlePath = localModulePath('packages/drizzle-duckdb-wasm/dist/bundles/import-url-browser.mjs')
+
+const extraAliases: Record<string, string> = {}
+
+if (existsSync(drizzleDistPath))
+  extraAliases['@proj-airi/drizzle-duckdb-wasm'] = drizzleDistPath
+
+if (existsSync(drizzleBundlePath))
+  extraAliases['@proj-airi/drizzle-duckdb-wasm/bundles/import-url-browser'] = drizzleBundlePath
+
 export default defineConfig({
   optimizeDeps: {
     exclude: [
@@ -102,6 +117,7 @@ export default defineConfig({
       '@proj-airi/stage-ui': resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-ui', 'src')),
       '@proj-airi/stage-pages': resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-pages', 'src')),
       '@proj-airi/stage-shared': resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-shared', 'src')),
+      ...extraAliases,
     },
   },
   server: {
