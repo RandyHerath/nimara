@@ -1,18 +1,18 @@
 {
-  "name": "@proj-nimara/unocss-preset-fonts",
+  "name": "@proj-airi/unocss-preset-fonts",
   "type": "module",
   "version": "0.7.2-beta.3",
   "description": "Fonts that are not included by Google Fonts, FontSource but open-source used by Project NIMARA",
   "author": {
     "name": "Moeru AI Project NIMARA Team",
-    "email": "nimara@moeru.ai",
+    "email": "airi@moeru.ai",
     "url": "https://github.com/moeru-ai"
   },
   "license": "MIT",
-  "homepage": "https://github.com/moeru-ai/nimara",
+  "homepage": "https://github.com/moeru-ai/airi",
   "repository": {
     "type": "git",
-    "url": "https://github.com/moeru-ai/nimara.git",
+    "url": "https://github.com/moeru-ai/airi.git",
     "directory": "packages/unocss-preset-fonts"
   },
   "exports": {
@@ -30,9 +30,9 @@
     "@unocss/preset-web-fonts": "workspace:^"
   },
   "dependencies": {
-    "@proj-nimara/font-cjkfonts-allseto": "workspace:*",
-    "@proj-nimara/font-departure-mono": "workspace:*",
-    "@proj-nimara/font-xiaolai": "workspace:*",
+    "@proj-airi/font-cjkfonts-allseto": "workspace:*",
+    "@proj-airi/font-departure-mono": "workspace:*",
+    "@proj-airi/font-xiaolai": "workspace:*",
     "@unocss/core": ">=66",
     "@unocss/preset-web-fonts": ">=66"
   }

@@ -4,9 +4,9 @@ import type { SpeechProvider } from '@xsai-ext/shared-providers'
 import {
   SpeechPlayground,
   SpeechProviderSettings,
-} from '@proj-nimara/stage-ui/components'
-import { useSpeechStore } from '@proj-nimara/stage-ui/stores/modules/speech'
-import { useProvidersStore } from '@proj-nimara/stage-ui/stores/providers'
+} from '@proj-airi/stage-ui/components'
+import { useSpeechStore } from '@proj-airi/stage-ui/stores/modules/speech'
+import { useProvidersStore } from '@proj-airi/stage-ui/stores/providers'
 import { computed, onMounted, watch } from 'vue'
 // import { useI18n } from 'vue-i18n'
 

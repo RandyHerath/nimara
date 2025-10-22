@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Input, TransitionVertical } from '@proj-nimara/ui'
+import { Input, TransitionVertical } from '@proj-airi/ui'
 import { ref } from 'vue'
 
 withDefaults(defineProps<{

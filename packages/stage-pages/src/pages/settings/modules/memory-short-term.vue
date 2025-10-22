@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// import { useServerStore } from '@proj-nimara/stage-ui/stores/servers'
+// import { useServerStore } from '@proj-airi/stage-ui/stores/servers'
 
 // const serverStore = useServerStore()
 </script>

@@ -1,4 +1,4 @@
-# @proj-nimara/ui-loading-screens
+# @proj-airi/ui-loading-screens
 
 <p align="center">
   [<a href="https://proj-nimara-packages-ui-loading-screens.netlify.app/">Try it</a>]

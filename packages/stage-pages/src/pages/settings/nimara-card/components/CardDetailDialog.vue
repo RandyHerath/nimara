@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { NimaraCard } from '@proj-nimara/stage-ui/stores/modules/nimara-card'
+import type { NimaraCard } from '@proj-airi/stage-ui/stores/modules/nimara-card'
 
 import DOMPurify from 'dompurify'
 
-import { Button } from '@proj-nimara/stage-ui/components'
-import { useNimaraCardStore } from '@proj-nimara/stage-ui/stores/modules/nimara-card'
+import { Button } from '@proj-airi/stage-ui/components'
+import { useNimaraCardStore } from '@proj-airi/stage-ui/stores/modules/nimara-card'
 import { storeToRefs } from 'pinia'
 import {
   DialogContent,

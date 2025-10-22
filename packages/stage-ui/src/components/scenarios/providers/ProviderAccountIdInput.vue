@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FieldInput } from '@proj-nimara/ui'
+import { FieldInput } from '@proj-airi/ui'
 
 const props = defineProps<{
   placeholder?: string

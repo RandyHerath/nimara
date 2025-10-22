@@ -1,17 +1,17 @@
 {
-  "name": "@proj-nimara/ui",
+  "name": "@proj-airi/ui",
   "type": "module",
   "version": "0.7.2-beta.3",
   "description": "A collection of UI components that used by Project NIMARA",
   "author": {
     "name": "Moeru AI Project NIMARA Team",
-    "email": "nimara@moeru.ai",
+    "email": "airi@moeru.ai",
     "url": "https://github.com/moeru-ai"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/moeru-ai/nimara.git",
+    "url": "https://github.com/moeru-ai/airi.git",
     "directory": "packages/ui"
   },
   "exports": {

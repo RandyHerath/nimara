@@ -4,9 +4,9 @@ import type { TranscriptionProvider } from '@xsai-ext/shared-providers'
 import {
   TranscriptionPlayground,
   TranscriptionProviderSettings,
-} from '@proj-nimara/stage-ui/components'
-import { useHearingStore } from '@proj-nimara/stage-ui/stores/modules/hearing'
-import { useProvidersStore } from '@proj-nimara/stage-ui/stores/providers'
+} from '@proj-airi/stage-ui/components'
+import { useHearingStore } from '@proj-airi/stage-ui/stores/modules/hearing'
+import { useProvidersStore } from '@proj-airi/stage-ui/stores/providers'
 import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 

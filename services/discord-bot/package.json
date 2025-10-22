@@ -1,17 +1,17 @@
 {
-  "name": "@proj-nimara/discord-bot",
+  "name": "@proj-airi/discord-bot",
   "type": "module",
   "private": true,
   "description": "Discord bot for NIMARA",
   "author": {
     "name": "Moeru AI Project NIMARA Team",
-    "email": "nimara@moeru.ai",
+    "email": "airi@moeru.ai",
     "url": "https://github.com/moeru-ai"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/moeru-ai/nimara.git",
+    "url": "https://github.com/moeru-ai/airi.git",
     "directory": "services/discord-bot"
   },
   "scripts": {
@@ -23,9 +23,9 @@
     "@dotenvx/dotenvx": "^1.51.0",
     "@guiiai/logg": "catalog:",
     "@huggingface/transformers": "^3.7.5",
-    "@proj-nimara/audio": "workspace:*",
-    "@proj-nimara/server-sdk": "workspace:*",
-    "@proj-nimara/server-shared": "workspace:*",
+    "@proj-airi/audio": "workspace:*",
+    "@proj-airi/server-sdk": "workspace:*",
+    "@proj-airi/server-shared": "workspace:*",
     "@xsai-ext/providers-cloud": "catalog:",
     "@xsai/generate-speech": "catalog:",
     "@xsai/generate-text": "catalog:",

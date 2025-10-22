@@ -7,7 +7,7 @@ Shared core for stage
 https://histoire.dev/
 
 ```
-pnpm -F @proj-nimara/stage-ui run story:dev
+pnpm -F @proj-airi/stage-ui run story:dev
 ```
 
 ### Project structure

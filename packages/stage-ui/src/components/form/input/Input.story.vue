@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Input } from '@proj-nimara/ui'
+import { Input } from '@proj-airi/ui'
 import { ref } from 'vue'
 
 const textValue = ref('')

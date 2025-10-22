@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { TransitionVertical } from '@proj-nimara/ui'
+import { TransitionVertical } from '@proj-airi/ui'
 import { watchEffect } from 'vue'
 
 const props = defineProps<{

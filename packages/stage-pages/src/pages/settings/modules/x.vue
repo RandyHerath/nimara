@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { X } from '@proj-nimara/stage-ui/components'
+import { X } from '@proj-airi/stage-ui/components'
 </script>
 
 <template>

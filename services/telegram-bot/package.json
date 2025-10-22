@@ -1,17 +1,17 @@
 {
-  "name": "@proj-nimara/telegram-bot",
+  "name": "@proj-airi/telegram-bot",
   "type": "module",
   "private": true,
   "description": "Telegram bot for NIMARA",
   "author": {
     "name": "Moeru AI Project NIMARA Team",
-    "email": "nimara@moeru.ai",
+    "email": "airi@moeru.ai",
     "url": "https://github.com/moeru-ai"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/moeru-ai/nimara.git",
+    "url": "https://github.com/moeru-ai/airi.git",
     "directory": "services/telegram-bot"
   },
   "scripts": {

@@ -1,12 +1,12 @@
 {
-  "name": "@proj-nimara/drizzle-duckdb-wasm",
+  "name": "@proj-airi/drizzle-duckdb-wasm",
   "type": "module",
   "version": "0.4.29",
   "private": true,
   "description": "Drizzle ORM driver for @duckdb/duckdb-wasm tailored for Project NIMARA tooling.",
   "author": {
     "name": "Project NIMARA Team",
-    "email": "nimara@moeru.ai",
+    "email": "airi@moeru.ai",
     "url": "https://github.com/moeru-ai"
   },
   "license": "MIT",
@@ -57,7 +57,7 @@
     "@date-fns/tz": "^1.4.1",
     "@duckdb/duckdb-wasm": "1.29.1-dev68.0",
     "@moeru/std": "0.1.0-beta.1",
-    "@proj-nimara/duckdb-wasm": "workspace:*",
+    "@proj-airi/duckdb-wasm": "workspace:*",
     "apache-arrow": "^21.1.0",
     "date-fns": "^4.1.0",
     "es-toolkit": "^1.40.0"

@@ -1,12 +1,12 @@
 {
-  "name": "@proj-nimara/duckdb-wasm",
+  "name": "@proj-airi/duckdb-wasm",
   "type": "module",
   "version": "0.4.29",
   "private": true,
   "description": "Convenient @duckdb/duckdb-wasm wrapper with sensible defaults for Project NIMARA tooling.",
   "author": {
     "name": "Project NIMARA Team",
-    "email": "nimara@moeru.ai",
+    "email": "airi@moeru.ai",
     "url": "https://github.com/moeru-ai"
   },
   "license": "MIT",

@@ -1,4 +1,4 @@
-import { ToasterPWAUpdateReady } from '@proj-nimara/stage-ui/components'
+import { ToasterPWAUpdateReady } from '@proj-airi/stage-ui/components'
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import { nanoid } from 'nanoid'
 import { defineStore } from 'pinia'

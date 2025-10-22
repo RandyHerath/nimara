@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Checkbox } from '@proj-nimara/ui'
+import { Checkbox } from '@proj-airi/ui'
 import { onMounted, onUnmounted, ref } from 'vue'
 
 import LoadingSciFiCircle from '../../../src/components/LoadingSciFiCircle/index.vue'

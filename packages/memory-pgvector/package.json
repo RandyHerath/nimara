@@ -1,18 +1,18 @@
 {
-  "name": "@proj-nimara/memory-pgvector",
+  "name": "@proj-airi/memory-pgvector",
   "type": "module",
   "version": "0.7.2-beta.3",
   "private": true,
   "description": "",
   "author": {
     "name": "Moeru AI Project NIMARA Team",
-    "email": "nimara@moeru.ai",
+    "email": "airi@moeru.ai",
     "url": "https://github.com/moeru-ai"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/moeru-ai/nimara.git",
+    "url": "https://github.com/moeru-ai/airi.git",
     "directory": "packages/memory-pgvector"
   },
   "keywords": [],
@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@guiiai/logg": "catalog:",
-    "@proj-nimara/server-sdk": "workspace:*",
+    "@proj-airi/server-sdk": "workspace:*",
     "drizzle-orm": "^0.44.6",
     "postgres": "^3.4.7"
   },

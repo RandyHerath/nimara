@@ -1,17 +1,17 @@
 {
-  "name": "@proj-nimara/server-sdk",
+  "name": "@proj-airi/server-sdk",
   "type": "module",
   "version": "0.7.2-beta.3",
   "description": "Client-side SDK implementation for connecting to NIMARA server components and runtimes",
   "author": {
     "name": "Moeru AI Project NIMARA Team",
-    "email": "nimara@moeru.ai",
+    "email": "airi@moeru.ai",
     "url": "https://github.com/moeru-ai"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/moeru-ai/nimara.git",
+    "url": "https://github.com/moeru-ai/airi.git",
     "directory": "packages/server-sdk"
   },
   "exports": {
@@ -37,7 +37,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@proj-nimara/server-shared": "workspace:*",
+    "@proj-airi/server-shared": "workspace:*",
     "crossws": "^0.4.1",
     "defu": "^6.1.4"
   },

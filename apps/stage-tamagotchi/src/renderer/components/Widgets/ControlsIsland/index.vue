@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { HearingConfigDialog } from '@proj-nimara/stage-ui/components'
-import { useSettingsAudioDevice } from '@proj-nimara/stage-ui/stores/settings'
+import { HearingConfigDialog } from '@proj-airi/stage-ui/components'
+import { useSettingsAudioDevice } from '@proj-airi/stage-ui/stores/settings'
 import { defineInvoke } from '@unbird/eventa'
 import { createContext } from '@unbird/eventa/adapters/electron/renderer'
 import { useDark, useToggle } from '@vueuse/core'

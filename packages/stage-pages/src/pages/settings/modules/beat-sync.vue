@@ -2,9 +2,9 @@
 import type { AnalyserBeatEvent, AnalyserWorkletParameters } from '@nekopaw/tempora'
 
 import { DEFAULT_ANALYSER_WORKLET_PARAMS } from '@nekopaw/tempora'
-import { Button } from '@proj-nimara/stage-ui/components'
-import { useBeatSyncStore } from '@proj-nimara/stage-ui/stores/beat-sync'
-import { FieldCheckbox, FieldRange } from '@proj-nimara/ui'
+import { Button } from '@proj-airi/stage-ui/components'
+import { useBeatSyncStore } from '@proj-airi/stage-ui/stores/beat-sync'
+import { FieldCheckbox, FieldRange } from '@proj-airi/ui'
 import { createTimeline } from 'animejs'
 import { nanoid } from 'nanoid'
 import { onMounted, onUnmounted, ref, watchEffect } from 'vue'

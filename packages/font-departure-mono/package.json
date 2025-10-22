@@ -1,5 +1,5 @@
 {
-  "name": "@proj-nimara/font-departure-mono",
+  "name": "@proj-airi/font-departure-mono",
   "type": "module",
   "version": "0.7.2-beta.3",
   "description": "Essential CSS for font, Departure Mono, used by Project NIMARA",
@@ -12,7 +12,7 @@
   "homepage": "https://departuremono.com/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/moeru-ai/nimara.git",
+    "url": "https://github.com/moeru-ai/airi.git",
     "directory": "packages/font-departure-mono"
   },
   "exports": {

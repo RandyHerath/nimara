@@ -1,4 +1,4 @@
-# @proj-nimara/ccc
+# @proj-airi/ccc
 
 Create Character Card in a modular way.
 

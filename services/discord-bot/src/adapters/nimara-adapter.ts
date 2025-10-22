@@ -3,7 +3,7 @@ import type { Interaction } from 'discord.js'
 import { env } from 'node:process'
 
 import { useLogg } from '@guiiai/logg'
-import { Client as NimaraClient } from '@proj-nimara/server-sdk'
+import { Client as NimaraClient } from '@proj-airi/server-sdk'
 import { Client, Events, GatewayIntentBits } from 'discord.js'
 
 import { handlePing, registerCommands, VoiceManager } from '../bots/discord/commands'

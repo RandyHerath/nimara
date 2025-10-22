@@ -230,14 +230,14 @@ cp .env .env.local
 执行数据库迁移：
 
 ```shell
-pnpm -F @proj-nimara/telegram-bot db:generate
-pnpm -F @proj-nimara/telegram-bot db:push
+pnpm -F @proj-airi/telegram-bot db:generate
+pnpm -F @proj-airi/telegram-bot db:push
 ```
 
 启动机器人：
 
 ```shell
-pnpm -F @proj-nimara/telegram-bot start
+pnpm -F @proj-airi/telegram-bot start
 ```
 
 ::: tip
@@ -245,7 +245,7 @@ pnpm -F @proj-nimara/telegram-bot start
 如果你使用 [@antfu/ni](https://github.com/antfu-collective/ni)，你可以：
 
 ```shell
-nr -F @proj-nimara/telegram-bot dev
+nr -F @proj-airi/telegram-bot dev
 ```
 
 :::
@@ -267,7 +267,7 @@ cp .env .env.local
 启动机器人：
 
 ```shell
-pnpm -F @proj-nimara/discord-bot start
+pnpm -F @proj-airi/discord-bot start
 ```
 
 ::: tip
@@ -275,7 +275,7 @@ pnpm -F @proj-nimara/discord-bot start
 如果你使用 [@antfu/ni](https://github.com/antfu-collective/ni)，你可以：
 
 ```shell
-nr -F @proj-nimara/discord-bot dev
+nr -F @proj-airi/discord-bot dev
 ```
 
 :::
@@ -299,7 +299,7 @@ cp .env .env.local
 启动机器人：
 
 ```shell
-pnpm -F @proj-nimara/minecraft-bot start
+pnpm -F @proj-airi/minecraft-bot start
 ```
 
 ::: tip
@@ -307,7 +307,7 @@ pnpm -F @proj-nimara/minecraft-bot start
 如果你使用 [@antfu/ni](https://github.com/antfu-collective/ni)，你可以：
 
 ```shell
-nr -F @proj-nimara/minecraft-bot dev
+nr -F @proj-airi/minecraft-bot dev
 ```
 
 :::

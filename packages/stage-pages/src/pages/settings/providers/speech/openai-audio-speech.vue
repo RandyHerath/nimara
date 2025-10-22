@@ -4,10 +4,10 @@ import type { SpeechProvider } from '@xsai-ext/shared-providers'
 import {
   SpeechPlayground,
   SpeechProviderSettings,
-} from '@proj-nimara/stage-ui/components'
-import { useSpeechStore } from '@proj-nimara/stage-ui/stores/modules/speech'
-import { useProvidersStore } from '@proj-nimara/stage-ui/stores/providers'
-import { FieldRange } from '@proj-nimara/ui'
+} from '@proj-airi/stage-ui/components'
+import { useSpeechStore } from '@proj-airi/stage-ui/stores/modules/speech'
+import { useProvidersStore } from '@proj-airi/stage-ui/stores/providers'
+import { FieldRange } from '@proj-airi/ui'
 import { storeToRefs } from 'pinia'
 import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'

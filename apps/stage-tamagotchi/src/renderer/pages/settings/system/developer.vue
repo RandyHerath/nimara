@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ButtonBar, CheckBar, IconItem } from '@proj-nimara/stage-ui/components'
-import { useSettings } from '@proj-nimara/stage-ui/stores/settings'
+import { ButtonBar, CheckBar, IconItem } from '@proj-airi/stage-ui/components'
+import { useSettings } from '@proj-airi/stage-ui/stores/settings'
 import { defineInvoke } from '@unbird/eventa'
 import { createContext } from '@unbird/eventa/adapters/electron/renderer'
 import { computed } from 'vue'

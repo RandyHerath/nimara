@@ -1,17 +1,17 @@
 {
-  "name": "@proj-nimara/stage-ui-three",
+  "name": "@proj-airi/stage-ui-three",
   "type": "module",
   "private": true,
   "description": "A collection of 3D scene components that used by Project NIMARA",
   "author": {
     "name": "Moeru AI Project NIMARA Team",
-    "email": "nimara@moeru.ai",
+    "email": "airi@moeru.ai",
     "url": "https://github.com/moeru-ai"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/moeru-ai/nimara.git",
+    "url": "https://github.com/moeru-ai/airi.git",
     "directory": "packages/stage-ui-three"
   },
   "exports": {
@@ -24,8 +24,8 @@
     "@pixiv/three-vrm": "^3.4.2",
     "@pixiv/three-vrm-animation": "^3.4.2",
     "@pixiv/three-vrm-core": "^3.4.2",
-    "@proj-nimara/stage-shared": "workspace:*",
-    "@proj-nimara/tresjs": "workspace:*",
+    "@proj-airi/stage-shared": "workspace:*",
+    "@proj-airi/tresjs": "workspace:*",
     "@tresjs/cientos": "^5.1.0",
     "@tresjs/core": "^5.1.0",
     "@vueuse/core": "^13.9.0",

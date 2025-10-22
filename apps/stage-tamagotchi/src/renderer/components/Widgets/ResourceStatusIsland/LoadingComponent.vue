@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Component } from '../../../stores/resources'
 
-import { Progress } from '@proj-nimara/stage-ui/components'
+import { Progress } from '@proj-airi/stage-ui/components'
 
 const props = defineProps<{
   component: Component

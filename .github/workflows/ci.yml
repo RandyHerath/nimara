@@ -30,13 +30,13 @@ jobs:
     strategy:
       matrix:
         include:
-          - command: pnpm -F @proj-nimara/stage-web run build && pnpm -F @proj-nimara/docs run build:base && mv ./docs/.vitepress/dist ./apps/stage-web/dist/docs && pnpm -F @proj-nimara/stage-ui run story:build && mv ./packages/stage-ui/.histoire/dist ./apps/stage-web/dist/ui
+          - command: pnpm -F @proj-airi/stage-web run build && pnpm -F @proj-airi/docs run build:base && mv ./docs/.vitepress/dist ./apps/stage-web/dist/docs && pnpm -F @proj-airi/stage-ui run story:build && mv ./packages/stage-ui/.histoire/dist ./apps/stage-web/dist/ui
             app_name: stage-web
-          - command: pnpm -F @proj-nimara/stage-tamagotchi run build
+          - command: pnpm -F @proj-airi/stage-tamagotchi run build
             app_name: stage-tamagotchi
-          - command: pnpm -F @proj-nimara/ui-transitions run build && pnpm -F @proj-nimara/ui-transitions run play:build
+          - command: pnpm -F @proj-airi/ui-transitions run build && pnpm -F @proj-airi/ui-transitions run play:build
             app_name: ui-transitions
-          - command: pnpm -F @proj-nimara/ui-loading-screens run build && pnpm -F @proj-nimara/ui-loading-screens run play:build
+          - command: pnpm -F @proj-airi/ui-loading-screens run build && pnpm -F @proj-airi/ui-loading-screens run play:build
             app_name: ui-loading-screens
 
     runs-on: ubuntu-latest

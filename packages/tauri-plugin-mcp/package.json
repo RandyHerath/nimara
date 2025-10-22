@@ -1,18 +1,18 @@
 {
-  "name": "@proj-nimara/tauri-plugin-mcp",
+  "name": "@proj-airi/tauri-plugin-mcp",
   "type": "module",
   "version": "0.7.2-beta.3",
   "packageManager": "pnpm@10.18.2",
   "description": "A Tauri plugin for interacting with MCP servers.",
   "author": {
     "name": "Moeru AI Project NIMARA Team",
-    "email": "nimara@moeru.ai",
+    "email": "airi@moeru.ai",
     "url": "https://github.com/moeru-ai"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/moeru-ai/nimara.git",
+    "url": "https://github.com/moeru-ai/airi.git",
     "directory": "packages/tauri-plugin-mcp"
   },
   "exports": {

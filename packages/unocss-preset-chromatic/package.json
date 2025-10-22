@@ -1,12 +1,12 @@
 {
-  "name": "@proj-nimara/unocss-preset-chromatic",
+  "name": "@proj-airi/unocss-preset-chromatic",
   "type": "module",
   "version": "1.0.2",
   "private": true,
   "description": "UnoCSS preset providing the chromatic palette used across Project NIMARA.",
   "author": {
     "name": "Project NIMARA Team",
-    "email": "nimara@moeru.ai",
+    "email": "airi@moeru.ai",
     "url": "https://github.com/moeru-ai"
   },
   "license": "MIT",

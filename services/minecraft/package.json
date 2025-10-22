@@ -1,5 +1,5 @@
 {
-  "name": "@proj-nimara/minecraft-bot",
+  "name": "@proj-airi/minecraft-bot",
   "type": "module",
   "private": true,
   "description": "An intelligent Minecraft bot powered by LLM. NIMARA can understand natural language commands, interact with the world, and assist players in various tasks.",
@@ -14,7 +14,7 @@
   "dependencies": {
     "@guiiai/logg": "catalog:",
     "@moeru/std": "catalog:",
-    "@proj-nimara/server-sdk": "workspace:*",
+    "@proj-airi/server-sdk": "workspace:*",
     "awilix": "^12.0.5",
     "es-toolkit": "^1.40.0",
     "eventemitter3": "^5.0.1",

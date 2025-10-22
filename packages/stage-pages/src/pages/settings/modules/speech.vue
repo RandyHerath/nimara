@@ -9,15 +9,15 @@ import {
   Skeleton,
   TestDummyMarker,
   VoiceCardManySelect,
-} from '@proj-nimara/stage-ui/components'
-import { useSpeechStore } from '@proj-nimara/stage-ui/stores/modules/speech'
-import { useProvidersStore } from '@proj-nimara/stage-ui/stores/providers'
+} from '@proj-airi/stage-ui/components'
+import { useSpeechStore } from '@proj-airi/stage-ui/stores/modules/speech'
+import { useProvidersStore } from '@proj-airi/stage-ui/stores/providers'
 import {
   FieldCheckbox,
   FieldInput,
   FieldRange,
   Textarea,
-} from '@proj-nimara/ui'
+} from '@proj-airi/ui'
 import { generateSpeech } from '@xsai/generate-speech'
 import { storeToRefs } from 'pinia'
 import { onMounted, onUnmounted, ref, watch } from 'vue'

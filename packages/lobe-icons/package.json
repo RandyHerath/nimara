@@ -1,12 +1,12 @@
 {
-  "name": "@proj-nimara/lobe-icons",
+  "name": "@proj-airi/lobe-icons",
   "type": "module",
   "version": "1.0.13",
   "private": true,
   "description": "Iconify JSON icon set curated for Project NIMARA surfaces.",
   "author": {
     "name": "Project NIMARA Team",
-    "email": "nimara@moeru.ai",
+    "email": "airi@moeru.ai",
     "url": "https://github.com/moeru-ai"
   },
   "license": "MIT",

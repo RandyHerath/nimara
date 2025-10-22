@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FieldRange } from '@proj-nimara/ui'
+import { FieldRange } from '@proj-airi/ui'
 import { ref } from 'vue'
 
 import PoppinText from './PoppinText.web.vue'
@@ -12,7 +12,7 @@ import {
   createStackAnimator,
 } from './animators'
 
-const text = ref('行こう、七色のキラキラドキドキに向かって！')
+const text = ref('Hello from AIRi. Testing PoppinText animations with a readable sample sentence.')
 const duration = ref(750)
 
 function createStream(text: string) {
@@ -34,9 +34,9 @@ function createStream(text: string) {
   })
 }
 
-const textStream = createStream('行こう、七色のキラキラドキドキに向かって！')
-const emojiStream = createStream('🧑‍🧒🤾‍♀️🚵👨‍🚀👩‍🚀')
-const mixedLanguageStream = createStream('g̈각நிกำषिक्षि')
+const textStream = createStream('Streaming text example powered by AIRi components working in real time.')
+const emojiStream = createStream('Sparkles and confetti illustrated with text-only characters.')
+const mixedLanguageStream = createStream('Hello AIRi! This sample mixes English with romaji: konnichiwa AIRi-san.')
 </script>
 
 <template>

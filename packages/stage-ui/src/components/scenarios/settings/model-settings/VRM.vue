@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useModelStore } from '@proj-nimara/stage-ui-three'
+import { useModelStore } from '@proj-airi/stage-ui-three'
 import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'

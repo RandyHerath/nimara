@@ -4,7 +4,7 @@ version.workspace = true
 description = "Audio VAD (Voice Activity Detection) plugin for Tauri using ONNX Runtime"
 authors = [ "Neko Ayaka <neko@ayaka.moe>" ]
 license = "MIT"
-repository = "https://github.com/moeru-ai/nimara"
+repository = "https://github.com/moeru-ai/airi"
 edition = "2024"
 rust-version = "1.85.0"
 links = "tauri-plugin-ipc-audio-vad-ort"
@@ -47,3 +47,4 @@ ort = { version = "2.0.0-rc.10", features = ["ndarray", "directml", "cuda"] }
 
 [target.'cfg(target_os = "linux")'.dependencies]
 ort = { version = "2.0.0-rc.10", features = ["ndarray", "cuda"] }
+

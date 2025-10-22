@@ -6,7 +6,7 @@ import { platform } from 'node:process'
 
 import { electronApp, optimizer } from '@electron-toolkit/utils'
 import { Format, LogLevel, setGlobalFormat, setGlobalLogLevel, useLogg } from '@guiiai/logg'
-import { createLoggLogger, injecta } from '@proj-nimara/injecta'
+import { createLoggLogger, injecta } from '@proj-airi/injecta'
 import { app, Menu, nativeImage, Tray } from 'electron'
 import { noop, once } from 'es-toolkit'
 import { isLinux, isMacOS } from 'std-env'
@@ -76,7 +76,7 @@ async function setupProjectNIMARAServerRuntime() {
   try {
     // Dynamically import the server-runtime and listhen
     const [serverRuntimeModule, { listen }] = await Promise.all([
-      import('@proj-nimara/server-runtime'),
+      import('@proj-airi/server-runtime'),
       import('listhen'),
     ])
 
@@ -86,7 +86,7 @@ async function setupProjectNIMARAServerRuntime() {
       ws: true,
     })
 
-    log.log('@proj-nimara/server-runtime started on ws://localhost:6121')
+    log.log('@proj-airi/server-runtime started on ws://localhost:6121')
 
     onAppBeforeQuit(async () => {
       if (serverInstance && typeof serverInstance.close === 'function') {

@@ -11,11 +11,11 @@ import {
   ProviderSettingsContainer,
   ProviderSettingsLayout,
   SpeechPlaygroundOpenAICompatible,
-} from '@proj-nimara/stage-ui/components'
-import { useProviderValidation } from '@proj-nimara/stage-ui/composables/use-provider-validation'
-import { useSpeechStore } from '@proj-nimara/stage-ui/stores/modules/speech'
-import { useProvidersStore } from '@proj-nimara/stage-ui/stores/providers'
-import { FieldRange } from '@proj-nimara/ui'
+} from '@proj-airi/stage-ui/components'
+import { useProviderValidation } from '@proj-airi/stage-ui/composables/use-provider-validation'
+import { useSpeechStore } from '@proj-airi/stage-ui/stores/modules/speech'
+import { useProvidersStore } from '@proj-airi/stage-ui/stores/providers'
+import { FieldRange } from '@proj-airi/ui'
 import { storeToRefs } from 'pinia'
 import { computed, ref } from 'vue'
 

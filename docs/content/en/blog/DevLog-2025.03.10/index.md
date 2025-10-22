@@ -45,13 +45,13 @@ sizes and building process for the primary repository
 
 > Where do we go?
 
-Nice question! We got [`@proj-nimara`](https://github.com/proj-nimara) already
+Nice question! We got [`@proj-airi`](https://github.com/proj-nimara) already
 registered on GitHub as a organization, since many of the packages and static
 applications were not useful for Moeru AI too, perhaps we can move those
-packages to [`@proj-nimara`](https://github.com/proj-nimara).
+packages to [`@proj-airi`](https://github.com/proj-nimara).
 
 So, we moved some of the packages and applications into
-[`@proj-nimara`](https://github.com/proj-nimara) organization! You can check them out:
+[`@proj-airi`](https://github.com/proj-nimara) organization! You can check them out:
 
 - https://github.com/proj-nimara/webai-examples : meant to make demos with WebGPU and
   related stuff.

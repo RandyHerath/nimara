@@ -1,18 +1,18 @@
-# @proj-nimara/server-shared
+# @proj-airi/server-shared
 
 The shared type definitions for all server-side packages of Project NIMARA.
 
 ## Usage
 
 ```shell
-ni @proj-nimara/server-shared -D # from @antfu/ni, can be installed via `npm i -g @antfu/ni`
-pnpm i @proj-nimara/server-shared -D
-yarn i @proj-nimara/server-shared -D
-npm i @proj-nimara/server-shared -D
+ni @proj-airi/server-shared -D # from @antfu/ni, can be installed via `npm i -g @antfu/ni`
+pnpm i @proj-airi/server-shared -D
+yarn i @proj-airi/server-shared -D
+npm i @proj-airi/server-shared -D
 ```
 
 ```typescript
-import type { WebSocketEvents } from '@proj-nimara/server-shared'
+import type { WebSocketEvents } from '@proj-airi/server-shared'
 ```
 
 ## License

@@ -1,17 +1,17 @@
 {
-  "name": "@proj-nimara/component-calling",
+  "name": "@proj-airi/component-calling",
   "type": "module",
   "private": true,
   "description": "Realtime audio",
   "author": {
     "name": "Moeru AI Project NIMARA Team",
-    "email": "nimara@moeru.ai",
+    "email": "airi@moeru.ai",
     "url": "https://github.com/moeru-ai"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/moeru-ai/nimara.git",
+    "url": "https://github.com/moeru-ai/airi.git",
     "directory": "apps/component-calling"
   },
   "scripts": {
@@ -21,7 +21,7 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "@proj-nimara/ui": "workspace:*",
+    "@proj-airi/ui": "workspace:*",
     "@valibot/to-json-schema": "1.0.0-rc.0",
     "@vueuse/core": "^13.9.0",
     "@xsai/generate-text": "catalog:",

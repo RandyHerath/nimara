@@ -1,5 +1,5 @@
 {
-  "name": "@proj-nimara/twitter-services",
+  "name": "@proj-airi/twitter-services",
   "type": "module",
   "version": "0.7.2-beta.3",
   "private": true,
@@ -16,7 +16,7 @@
     "@guiiai/logg": "catalog:",
     "@modelcontextprotocol/sdk": "^1.20.0",
     "@moeru/std": "catalog:",
-    "@proj-nimara/server-sdk": "workspace:*",
+    "@proj-airi/server-sdk": "workspace:*",
     "dotenv": "^17.2.3",
     "h3": "^2.0.1-rc.2",
     "listhen": "^1.9.0",

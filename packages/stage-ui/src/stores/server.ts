@@ -1,4 +1,4 @@
-import { Client } from '@proj-nimara/server-sdk'
+import { Client } from '@proj-airi/server-sdk'
 import { defineStore } from 'pinia'
 import { onMounted, ref } from 'vue'
 

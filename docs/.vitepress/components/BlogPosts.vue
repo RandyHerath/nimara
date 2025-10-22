@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
-import { chromaticPaletteFrom } from '@proj-nimara/chromatic'
+import { chromaticPaletteFrom } from '@proj-airi/chromatic'
 import { computedAsync } from '@vueuse/core'
 import { subtle } from 'uncrypto'
 import { useData, withBase } from 'vitepress'

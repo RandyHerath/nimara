@@ -1,18 +1,18 @@
-# @proj-nimara/server-sdk
+# @proj-airi/server-sdk
 
 The SDK for cliet-side code to connect to the server-side components.
 
 ## Usage
 
 ```shell
-ni @proj-nimara/server-sdk -D # from @antfu/ni, can be installed via `npm i -g @antfu/ni`
-pnpm i @proj-nimara/server-sdk -D
-yarn i @proj-nimara/server-sdk -D
-npm i @proj-nimara/server-sdk -D
+ni @proj-airi/server-sdk -D # from @antfu/ni, can be installed via `npm i -g @antfu/ni`
+pnpm i @proj-airi/server-sdk -D
+yarn i @proj-airi/server-sdk -D
+npm i @proj-airi/server-sdk -D
 ```
 
 ```typescript
-import { Client } from '@proj-nimara/server-sdk'
+import { Client } from '@proj-airi/server-sdk'
 
 const c = new Client({ name: 'your nimara plugin' })
 ```

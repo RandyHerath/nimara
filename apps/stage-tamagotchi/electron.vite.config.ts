@@ -10,8 +10,8 @@ import Inspect from 'vite-plugin-inspect'
 import VitePluginVueDevTools from 'vite-plugin-vue-devtools'
 import Layouts from 'vite-plugin-vue-layouts'
 
-import { Download } from '@proj-nimara/unplugin-fetch'
-import { DownloadLive2DSDK } from '@proj-nimara/unplugin-live2d-sdk'
+import { Download } from '@proj-airi/unplugin-fetch'
+import { DownloadLive2DSDK } from '@proj-airi/unplugin-live2d-sdk'
 import { templateCompilerOptions } from '@tresjs/core'
 import { defineConfig, externalizeDepsPlugin } from 'electron-vite'
 
@@ -29,9 +29,9 @@ export default defineConfig({
     optimizeDeps: {
       exclude: [
         // Internal Packages
-        '@proj-nimara/stage-ui/*',
-        '@proj-nimara/drizzle-duckdb-wasm',
-        '@proj-nimara/drizzle-duckdb-wasm/*',
+        '@proj-airi/stage-ui/*',
+        '@proj-airi/drizzle-duckdb-wasm',
+        '@proj-airi/drizzle-duckdb-wasm/*',
 
         // Static Assets: Models, Images, etc.
         'src/renderer/public/assets/*',
@@ -55,11 +55,11 @@ export default defineConfig({
     },
     resolve: {
       alias: {
-        '@proj-nimara/server-sdk': resolve(join(import.meta.dirname, '..', '..', 'packages', 'server-sdk', 'src')),
-        '@proj-nimara/i18n': resolve(join(import.meta.dirname, '..', '..', 'packages', 'i18n', 'src')),
-        '@proj-nimara/stage-ui': resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-ui', 'src')),
-        '@proj-nimara/stage-pages': resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-pages', 'src')),
-        '@proj-nimara/stage-shared': resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-shared', 'src')),
+        '@proj-airi/server-sdk': resolve(join(import.meta.dirname, '..', '..', 'packages', 'server-sdk', 'src')),
+        '@proj-airi/i18n': resolve(join(import.meta.dirname, '..', '..', 'packages', 'i18n', 'src')),
+        '@proj-airi/stage-ui': resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-ui', 'src')),
+        '@proj-airi/stage-pages': resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-pages', 'src')),
+        '@proj-airi/stage-shared': resolve(join(import.meta.dirname, '..', '..', 'packages', 'stage-shared', 'src')),
       },
     },
     server: {
@@ -73,7 +73,7 @@ export default defineConfig({
 
     plugins: [
       {
-        name: 'proj-nimara:define-runtime-environment',
+        name: 'proj-airi:define-runtime-environment',
         config(ctx) {
           if (ctx.mode === 'production') {
             return {

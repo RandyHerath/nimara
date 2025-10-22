@@ -632,17 +632,17 @@ Thanks to [@sxzz](https://github.com/sxzz) for the integration process.
 也采用了 [rolldown](https://rolldown.rs/) 和 [oxlint](https://oxc.rs/docs/guide/usage/linter) 帮助开发，希望能借此机会参与到 rolldown，
 rolldown-vite 和 oxc 的开发当中。非常感谢 [@sxzz](https://github.com/sxzz) 在迁移过程中给到的援助。
 
-- `@proj-nimara/drizzle-duckdb-wasm`, `@proj-nimara/duckdb-wasm`
-  The `@proj-nimara/drizzle-duckdb-wasm` and `@proj-nimara/duckdb-wasm` used to add DuckDB WASM driver support to Drizzle have also graduated
-in stages, and are now officially migrated under the organization name [@proj-nimara](https://github.com/proj-nimara)
+- `@proj-airi/drizzle-duckdb-wasm`, `@proj-airi/duckdb-wasm`
+  The `@proj-airi/drizzle-duckdb-wasm` and `@proj-airi/duckdb-wasm` used to add DuckDB WASM driver support to Drizzle have also graduated
+in stages, and are now officially migrated under the organization name [@proj-airi](https://github.com/proj-nimara)
 (no migration required, just keep installing the original packages).
 
-  用于为 Drizzle 添加 DuckDB WASM 驱动支持的 `@proj-nimara/drizzle-duckdb-wasm` 和 `@proj-nimara/duckdb-wasm` 也算是阶段性毕业了，
-现在正式迁移到 [@proj-nimara](https://github.com/proj-nimara) 的组织名下（不需要任何迁移操作，继续安装原来的包就可以用了）。
+  用于为 Drizzle 添加 DuckDB WASM 驱动支持的 `@proj-airi/drizzle-duckdb-wasm` 和 `@proj-airi/duckdb-wasm` 也算是阶段性毕业了，
+现在正式迁移到 [@proj-airi](https://github.com/proj-nimara) 的组织名下（不需要任何迁移操作，继续安装原来的包就可以用了）。
 
-The project is much faster now and should officially graduate `@proj-nimara/providers-transformers` to `xsai` this month.
+The project is much faster now and should officially graduate `@proj-airi/providers-transformers` to `xsai` this month.
 
-现在项目速度快了很多，这个月应该会把 `@proj-nimara/providers-transformers` 正式毕业到 `xsai` 名下。
+现在项目速度快了很多，这个月应该会把 `@proj-airi/providers-transformers` 正式毕业到 `xsai` 名下。
 
 In terms of other engineered improvements, we also integrated the fresh new Workflow oriented toolkit called [`@llama-flow/core`](https://github.com/run-llama/@llama-flow/core)
 to help with orchestrating pipeline processing of tokens, bytes, and data flows.

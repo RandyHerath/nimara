@@ -1,4 +1,4 @@
-// import type { BaseVAD, BaseVADConfig, VADEventCallback, VADEvents } from '@proj-nimara/stage-ui/libs/audio/vad'
+// import type { BaseVAD, BaseVADConfig, VADEventCallback, VADEvents } from '@proj-airi/stage-ui/libs/audio/vad'
 
 // import { invoke } from '../invoke'
 

@@ -1,12 +1,12 @@
 {
-  "name": "@proj-nimara/chromatic",
+  "name": "@proj-airi/chromatic",
   "type": "module",
   "version": "1.0.2",
   "private": true,
   "description": "Chromatic color utilities shared across Project NIMARA.",
   "author": {
     "name": "Project NIMARA Team",
-    "email": "nimara@moeru.ai",
+    "email": "airi@moeru.ai",
     "url": "https://github.com/moeru-ai"
   },
   "license": "MIT",

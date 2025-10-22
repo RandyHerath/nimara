@@ -42,7 +42,7 @@
 
 > [!NOTE]
 >
-> Project NIMARAから生まれたすべてのサブプロジェクト用に、専用の組織[@proj-nimara](https://github.com/proj-nimara)があります。ぜひチェックしてみてください！
+> Project NIMARAから生まれたすべてのサブプロジェクト用に、専用の組織[@proj-airi](https://github.com/proj-nimara)があります。ぜひチェックしてみてください！
 >
 > RAG、メモリシステム、組み込みデータベース、アイコン、Live2Dユーティリティなど多数あります！
 
@@ -196,8 +196,8 @@ pnpm dev:docs
 - [`hfup`](https://github.com/moeru-ai/hfup): HuggingFace Spacesへのデプロイとバンドルを支援するツール
 - [`xsai-transformers`](https://github.com/moeru-ai/xsai-transformers): [xsAI](https://github.com/moeru-ai/xsai)のための実験的な[🤗 Transformers.js](https://github.com/huggingface/transformers.js)プロバイダー
 - [WebAI: Realtime Voice Chat](https://github.com/proj-nimara/webai-realtime-voice-chat): VAD + STT + LLM + TTSを使用してChatGPTのリアルタイム音声をゼロから実装する完全な例
-- [`@proj-nimara/drizzle-duckdb-wasm`](https://github.com/moeru-ai/nimara/tree/main/packages/drizzle-duckdb-wasm/README.md): DuckDB WASMのDrizzle ORMドライバー
-- [`@proj-nimara/duckdb-wasm`](https://github.com/moeru-ai/nimara/tree/main/packages/duckdb-wasm/README.md): `@duckdb/duckdb-wasm`の使いやすいラッパー
+- [`@proj-airi/drizzle-duckdb-wasm`](https://github.com/moeru-ai/nimara/tree/main/packages/drizzle-duckdb-wasm/README.md): DuckDB WASMのDrizzle ORMドライバー
+- [`@proj-airi/duckdb-wasm`](https://github.com/moeru-ai/nimara/tree/main/packages/duckdb-wasm/README.md): `@duckdb/duckdb-wasm`の使いやすいラッパー
 - [NIMARA Factorio](https://github.com/moeru-ai/nimara-factorio): NIMARAがFactorioをプレイできるようにする
 - [Factorio RCON API](https://github.com/nekomeowww/factorio-rcon-api): FactorioヘッドレスサーバーコンソールのRESTful APIラッパー
 - [`autorio`](https://github.com/moeru-ai/nimara-factorio/tree/main/packages/autorio): Factorio自動化ライブラリ
@@ -214,15 +214,15 @@ pnpm dev:docs
 flowchart TD
   Core("Core")
   Unspeech("unspeech")
-  DBDriver("@proj-nimara/drizzle-duckdb-wasm")
+  DBDriver("@proj-airi/drizzle-duckdb-wasm")
   MemoryDriver("[WIP] メモリアラヤ")
-  DB1("@proj-nimara/duckdb-wasm")
-  SVRT("@proj-nimara/server-runtime")
+  DB1("@proj-airi/duckdb-wasm")
+  SVRT("@proj-airi/server-runtime")
   Memory("Memory")
   STT("STT")
   Stage("ステージ")
-  StageUI("@proj-nimara/stage-ui")
-  UI("@proj-nimara/ui")
+  StageUI("@proj-airi/stage-ui")
+  UI("@proj-airi/ui")
 
   subgraph NIMARA
     DB1 --> DBDriver --> MemoryDriver --> Memory --> Core
@@ -233,22 +233,22 @@ flowchart TD
 
   subgraph UI_Components
     UI --> StageUI
-    UITransitions("@proj-nimara/ui-transitions") --> StageUI
-    UILoadingScreens("@proj-nimara/ui-loading-screens") --> StageUI
-    FontCJK("@proj-nimara/font-cjkfonts-allseto") --> StageUI
-    FontXiaolai("@proj-nimara/font-xiaolai") --> StageUI
+    UITransitions("@proj-airi/ui-transitions") --> StageUI
+    UILoadingScreens("@proj-airi/ui-loading-screens") --> StageUI
+    FontCJK("@proj-airi/font-cjkfonts-allseto") --> StageUI
+    FontXiaolai("@proj-airi/font-xiaolai") --> StageUI
   end
 
   subgraph Apps
-    Stage --> StageWeb("@proj-nimara/stage-web")
-    Stage --> StageTamagotchi("@proj-nimara/stage-tamagotchi")
-    Core --> RealtimeAudio("@proj-nimara/realtime-audio")
-    Core --> PromptEngineering("@proj-nimara/playground-prompt-engineering")
+    Stage --> StageWeb("@proj-airi/stage-web")
+    Stage --> StageTamagotchi("@proj-airi/stage-tamagotchi")
+    Core --> RealtimeAudio("@proj-airi/realtime-audio")
+    Core --> PromptEngineering("@proj-airi/playground-prompt-engineering")
   end
 
   subgraph Server_Components
-    Core --> ServerSDK("@proj-nimara/server-sdk")
-    ServerShared("@proj-nimara/server-shared") --> SVRT
+    Core --> ServerSDK("@proj-airi/server-sdk")
+    ServerShared("@proj-airi/server-shared") --> SVRT
     ServerShared --> ServerSDK
   end
 
@@ -278,8 +278,8 @@ flowchart TD
   XSAI --> F_AGENT
   XSAI --> MC_AGENT
 
-  Core --> TauriMCP("@proj-nimara/tauri-plugin-mcp")
-  Memory_PGVector("@proj-nimara/memory-pgvector") --> Memory
+  Core --> TauriMCP("@proj-airi/tauri-plugin-mcp")
+  Memory_PGVector("@proj-airi/memory-pgvector") --> Memory
 
   style Core fill:#f9d4d4,stroke:#333,stroke-width:1px
   style NIMARA fill:#fcf7f7,stroke:#333,stroke-width:1px

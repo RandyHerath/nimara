@@ -39,7 +39,7 @@
 > **Chú ý:** Chúng tôi **không** phát hành bất kỳ loại tiền điện tử hay token chính thức nào liên quan đến dự án này. Hãy kiểm tra kỹ thông tin trước khi tham gia.
 
 > [!NOTE]
-> Chúng tôi có cả một tổ chức riêng [@proj-nimara](https://github.com/proj-nimara) cho các dự án con xuất phát từ NIMARA. Hãy xem qua nhé!
+> Chúng tôi có cả một tổ chức riêng [@proj-airi](https://github.com/proj-nimara) cho các dự án con xuất phát từ NIMARA. Hãy xem qua nhé!
 > Bao gồm: RAG, hệ thống bộ nhớ, cơ sở dữ liệu nhúng, icon, tiện ích Live2D, và nhiều hơn nữa.
 
 Bạn đã từng mơ về một thực thể số sống động (cyber-waifu / husbando, thú cưng ảo) hay một bạn đồng hành kỹ thuật số có thể chơi cùng và trò chuyện với bạn chưa?
@@ -217,8 +217,8 @@ npx bumpp --no-commit --no-tag
 - [`hfup`](https://github.com/moeru-ai/hfup): Các công cụ hỗ trợ triển khai, đóng gói lên HuggingFace Spaces
 - [`xsai-transformers`](https://github.com/moeru-ai/xsai-transformers): Nhà cung cấp thử nghiệm [🤗 Transformers.js](https://github.com/huggingface/transformers.js) cho [xsAI](https://github.com/moeru-ai/xsai).
 - [WebAI: Realtime Voice Chat](https://github.com/proj-nimara/webai-realtime-voice-chat): Ví dụ đầy đủ về việc triển khai voice realtime của ChatGPT từ đầu với VAD + STT + LLM + TTS.
-- [`@proj-nimara/drizzle-duckdb-wasm`](https://github.com/moeru-ai/nimara/tree/main/packages/drizzle-duckdb-wasm/README.md): Trình điều khiển Drizzle ORM cho DuckDB WASM
-- [`@proj-nimara/duckdb-wasm`](https://github.com/moeru-ai/nimara/tree/main/packages/duckdb-wasm/README.md): Wrapper dễ sử dụng cho `@duckdb/duckdb-wasm`
+- [`@proj-airi/drizzle-duckdb-wasm`](https://github.com/moeru-ai/nimara/tree/main/packages/drizzle-duckdb-wasm/README.md): Trình điều khiển Drizzle ORM cho DuckDB WASM
+- [`@proj-airi/duckdb-wasm`](https://github.com/moeru-ai/nimara/tree/main/packages/duckdb-wasm/README.md): Wrapper dễ sử dụng cho `@duckdb/duckdb-wasm`
 - [`tauri-plugin-mcp`](https://github.com/moeru-ai/nimara/blob/main/crates/tauri-plugin-mcp/README.md): Plugin Tauri để tương tác với máy chủ MCP.
 - [NIMARA Factorio](https://github.com/moeru-ai/nimara-factorio): Cho phép NIMARA chơi Factorio
 - [Factorio RCON API](https://github.com/nekomeowww/factorio-rcon-api): RESTful API wrapper cho console máy chủ headless Factorio
@@ -236,15 +236,15 @@ npx bumpp --no-commit --no-tag
 flowchart TD
   Core("Core")
   Unspeech("unspeech")
-  DBDriver("@proj-nimara/drizzle-duckdb-wasm")
+  DBDriver("@proj-airi/drizzle-duckdb-wasm")
   MemoryDriver("[WIP] Memory Alaya")
-  DB1("@proj-nimara/duckdb-wasm")
-  SVRT("@proj-nimara/server-runtime")
+  DB1("@proj-airi/duckdb-wasm")
+  SVRT("@proj-airi/server-runtime")
   Memory("Memory")
   STT("STT")
   Stage("Stage")
-  StageUI("@proj-nimara/stage-ui")
-  UI("@proj-nimara/ui")
+  StageUI("@proj-airi/stage-ui")
+  UI("@proj-airi/ui")
 
   subgraph NIMARA
     DB1 --> DBDriver --> MemoryDriver --> Memory --> Core
@@ -255,22 +255,22 @@ flowchart TD
 
   subgraph UI_Components
     UI --> StageUI
-    UITransitions("@proj-nimara/ui-transitions") --> StageUI
-    UILoadingScreens("@proj-nimara/ui-loading-screens") --> StageUI
-    FontCJK("@proj-nimara/font-cjkfonts-allseto") --> StageUI
-    FontXiaolai("@proj-nimara/font-xiaolai") --> StageUI
+    UITransitions("@proj-airi/ui-transitions") --> StageUI
+    UILoadingScreens("@proj-airi/ui-loading-screens") --> StageUI
+    FontCJK("@proj-airi/font-cjkfonts-allseto") --> StageUI
+    FontXiaolai("@proj-airi/font-xiaolai") --> StageUI
   end
 
   subgraph Apps
-    Stage --> StageWeb("@proj-nimara/stage-web")
-    Stage --> StageTamagotchi("@proj-nimara/stage-tamagotchi")
-    Core --> RealtimeAudio("@proj-nimara/realtime-audio")
-    Core --> PromptEngineering("@proj-nimara/playground-prompt-engineering")
+    Stage --> StageWeb("@proj-airi/stage-web")
+    Stage --> StageTamagotchi("@proj-airi/stage-tamagotchi")
+    Core --> RealtimeAudio("@proj-airi/realtime-audio")
+    Core --> PromptEngineering("@proj-airi/playground-prompt-engineering")
   end
 
   subgraph Server_Components
-    Core --> ServerSDK("@proj-nimara/server-sdk")
-    ServerShared("@proj-nimara/server-shared") --> SVRT
+    Core --> ServerSDK("@proj-airi/server-sdk")
+    ServerShared("@proj-airi/server-shared") --> SVRT
     ServerShared --> ServerSDK
   end
 
@@ -300,8 +300,8 @@ flowchart TD
   XSAI --> F_AGENT
   XSAI --> MC_AGENT
 
-  Core --> TauriMCP("@proj-nimara/tauri-plugin-mcp")
-  Memory_PGVector("@proj-nimara/memory-pgvector") --> Memory
+  Core --> TauriMCP("@proj-airi/tauri-plugin-mcp")
+  Memory_PGVector("@proj-airi/memory-pgvector") --> Memory
 
   style Core fill:#f9d4d4,stroke:#333,stroke-width:1px
   style NIMARA fill:#fcf7f7,stroke:#333,stroke-width:1px

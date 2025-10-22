@@ -1,5 +1,5 @@
 <script setup lang="ts" xmlns:i-solar="http://www.w3.org/1999/xhtml">
-import { FieldInput } from '@proj-nimara/ui'
+import { FieldInput } from '@proj-airi/ui'
 import { useDebounceFn } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 import { computed, nextTick, onMounted, ref, watch } from 'vue'

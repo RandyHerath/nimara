@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RoundRange } from '@proj-nimara/ui'
+import { RoundRange } from '@proj-airi/ui'
 import { ref } from 'vue'
 
 const minValue = ref(0)

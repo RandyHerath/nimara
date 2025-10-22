@@ -12,8 +12,8 @@ import type { DirectionalLight, SphericalHarmonics3, Texture, WebGLRenderTarget 
 
 import type { Vec3 } from '../stores/model-store'
 
-import { withBase } from '@proj-nimara/stage-shared'
-import { EffectComposerPmndrs, HueSaturationPmndrs } from '@proj-nimara/tresjs/post-processing'
+import { withBase } from '@proj-airi/stage-shared'
+import { EffectComposerPmndrs, HueSaturationPmndrs } from '@proj-airi/tresjs/post-processing'
 import { TresCanvas } from '@tresjs/core'
 import { useElementBounding } from '@vueuse/core'
 import { formatHex } from 'culori'

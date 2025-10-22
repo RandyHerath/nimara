@@ -1,5 +1,5 @@
 {
-  "name": "@proj-nimara/ccc",
+  "name": "@proj-airi/ccc",
   "type": "module",
   "private": true,
   "exports": "./src/index.ts",

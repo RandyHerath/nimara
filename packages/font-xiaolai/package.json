@@ -1,10 +1,10 @@
 {
-  "name": "@proj-nimara/font-xiaolai",
+  "name": "@proj-airi/font-xiaolai",
   "type": "module",
   "version": "0.7.2-beta.3",
-  "description": "Essential CSS for font, Xiaolai (小赖字体 / 小賴字體 / シャオライ / Xiaolai Font), used by Project NIMARA",
+  "description": "Essential CSS for font, Xiaolai (å°èµ–å­—ä½“ / å°è³´å­—é«” / ã‚·ãƒ£ã‚ªãƒ©ã‚¤ / Xiaolai Font), used by Project NIMARA",
   "author": {
-    "name": "ʟxɢᴡ",
+    "name": "ÊŸxÉ¢á´¡",
     "email": "calxgw2018@gmail.com",
     "url": "https://github.com/lxgw"
   },
@@ -12,7 +12,7 @@
   "homepage": "https://github.com/lxgw/kose-font",
   "repository": {
     "type": "git",
-    "url": "https://github.com/moeru-ai/nimara.git",
+    "url": "https://github.com/moeru-ai/airi.git",
     "directory": "packages/font-xiaolai"
   },
   "exports": {

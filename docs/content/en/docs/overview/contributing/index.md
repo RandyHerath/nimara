@@ -230,14 +230,14 @@ Edit the credentials in `.env.local`.
 Migrate the database
 
 ```shell
-pnpm -F @proj-nimara/telegram-bot db:generate
-pnpm -F @proj-nimara/telegram-bot db:push
+pnpm -F @proj-airi/telegram-bot db:generate
+pnpm -F @proj-airi/telegram-bot db:push
 ```
 
 Run the bot
 
 ```shell
-pnpm -F @proj-nimara/telegram-bot start
+pnpm -F @proj-airi/telegram-bot start
 ```
 
 ::: tip
@@ -245,7 +245,7 @@ pnpm -F @proj-nimara/telegram-bot start
 For [@antfu/ni](https://github.com/antfu-collective/ni) users, you can
 
 ```shell
-nr -F @proj-nimara/telegram-bot dev
+nr -F @proj-airi/telegram-bot dev
 ```
 
 :::
@@ -267,7 +267,7 @@ Edit the credentials in `.env.local`.
 Run the bot
 
 ```shell
-pnpm -F @proj-nimara/discord-bot start
+pnpm -F @proj-airi/discord-bot start
 ```
 
 ::: tip
@@ -275,7 +275,7 @@ pnpm -F @proj-nimara/discord-bot start
 For [@antfu/ni](https://github.com/antfu-collective/ni) users, you can
 
 ```shell
-nr -F @proj-nimara/discord-bot dev
+nr -F @proj-airi/discord-bot dev
 ```
 
 :::
@@ -299,7 +299,7 @@ Edit the credentials in `.env.local`.
 Run the bot
 
 ```shell
-pnpm -F @proj-nimara/minecraft-bot start
+pnpm -F @proj-airi/minecraft-bot start
 ```
 
 ::: tip
@@ -307,7 +307,7 @@ pnpm -F @proj-nimara/minecraft-bot start
 For [@antfu/ni](https://github.com/antfu-collective/ni) users, you can
 
 ```shell
-nr -F @proj-nimara/minecraft-bot dev
+nr -F @proj-airi/minecraft-bot dev
 ```
 
 :::

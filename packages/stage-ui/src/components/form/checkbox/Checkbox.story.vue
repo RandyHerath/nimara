@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Checkbox } from '@proj-nimara/ui'
+import { Checkbox } from '@proj-airi/ui'
 import { ref } from 'vue'
 
 const checkedValue = ref(true)

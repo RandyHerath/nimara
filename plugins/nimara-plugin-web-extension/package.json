@@ -1,5 +1,5 @@
 {
-  "name": "@proj-nimara/nimara-plugin-web-extension",
+  "name": "@proj-airi/nimara-plugin-web-extension",
   "type": "module",
   "version": "0.7.2-beta.3",
   "private": true,

@@ -8,7 +8,7 @@ import type { TwitterServices } from '../types/services'
 
 import * as fs from 'node:fs/promises'
 
-import { Client } from '@proj-nimara/server-sdk'
+import { Client } from '@proj-airi/server-sdk'
 
 import { getDefaultConfig } from '../config/types'
 import { initBrowser, useContext, useSessionFileAsync } from '../core/browser/context'

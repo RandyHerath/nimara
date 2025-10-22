@@ -7,7 +7,7 @@ import App from './App.vue'
 
 import '@unocss/reset/tailwind.css'
 import 'uno.css'
-import '@proj-nimara/font-departure-mono/index.css'
+import '@proj-airi/font-departure-mono/index.css'
 
 const router = createRouter({ routes, history: createWebHashHistory() })
 

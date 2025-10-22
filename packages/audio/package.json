@@ -1,17 +1,17 @@
 {
-  "name": "@proj-nimara/audio",
+  "name": "@proj-airi/audio",
   "type": "module",
   "private": true,
   "description": "Audio processing utilities for Project NIMARA",
   "author": {
     "name": "Moeru AI Project NIMARA Team",
-    "email": "nimara@moeru.ai",
+    "email": "airi@moeru.ai",
     "url": "https://github.com/moeru-ai"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/moeru-ai/nimara.git",
+    "url": "https://github.com/moeru-ai/airi.git",
     "directory": "packages/audio"
   },
   "exports": {

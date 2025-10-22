@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Range } from '@proj-nimara/ui'
+import { Range } from '@proj-airi/ui'
 import { ref } from 'vue'
 
 const minValue = ref(0)

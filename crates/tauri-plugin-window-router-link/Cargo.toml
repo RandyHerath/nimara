@@ -4,7 +4,7 @@ version.workspace = true
 description = "<RouterLink> like primitive support for opening links in desired window in Tauri"
 authors = [ "LemonNekoGH <self@lemonneko.moe>" ]
 license = "MIT"
-repository = "https://github.com/moeru-ai/nimara"
+repository = "https://github.com/moeru-ai/airi"
 edition = "2024"
 rust-version = "1.85.0"
 links = "tauri-plugin-window-router-link"
@@ -31,3 +31,4 @@ tauri-specta = { version = "=2.0.0-rc.21", features = ["derive", "typescript"] }
 
 [build-dependencies]
 tauri-plugin = { version = "2.2", features = [ "build" ] }
+

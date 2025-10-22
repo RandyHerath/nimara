@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { IconStatusItem } from '@proj-nimara/stage-ui/components'
-import { useProvidersStore } from '@proj-nimara/stage-ui/stores/providers'
+import { IconStatusItem } from '@proj-airi/stage-ui/components'
+import { useProvidersStore } from '@proj-airi/stage-ui/stores/providers'
 import { storeToRefs } from 'pinia'
 
 const providersStore = useProvidersStore()

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Select } from '@proj-nimara/ui'
+import { Select } from '@proj-airi/ui'
 
 const props = withDefaults(defineProps<{
   label: string

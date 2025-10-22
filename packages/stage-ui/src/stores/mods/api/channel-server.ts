@@ -1,10 +1,10 @@
-import type { WebSocketEvent } from '@proj-nimara/server-sdk'
+import type { WebSocketEvent } from '@proj-airi/server-sdk'
 
-import { Client } from '@proj-nimara/server-sdk'
+import { Client } from '@proj-airi/server-sdk'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
-export const useModsChannelServerStore = defineStore('mods:channels:proj-nimara:server', () => {
+export const useModsChannelServerStore = defineStore('mods:channels:proj-airi:server', () => {
   const connected = ref(false)
   const client = ref<Client>()
 
@@ -13,7 +13,7 @@ export const useModsChannelServerStore = defineStore('mods:channels:proj-nimara:
   function initialize(options?: { token?: string }) {
     return new Promise<void>((resolve, reject) => {
       client.value = new Client({
-        name: 'proj-nimara:ui:stage',
+        name: 'proj-airi:ui:stage',
         url: import.meta.env.VITE_NIMARA_WS_URL || 'ws://localhost:6121/ws',
         token: options?.token,
         possibleEvents: [

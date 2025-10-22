@@ -57,7 +57,7 @@ rustPlatform.buildRustPackage (final: {
       runHook preBuild
 
       pnpm run build:packages
-      pnpm -F @proj-nimara/stage-tamagotchi run build
+      pnpm -F @proj-airi/stage-tamagotchi run build
 
       runHook postBuild
     '';

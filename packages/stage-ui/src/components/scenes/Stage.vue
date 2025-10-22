@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import type { DuckDBWasmDrizzleDatabase } from '@proj-nimara/drizzle-duckdb-wasm'
+import type { DuckDBWasmDrizzleDatabase } from '@proj-airi/drizzle-duckdb-wasm'
 import type { SpeechProviderWithExtraOptions } from '@xsai-ext/shared-providers'
 import type { UnElevenLabsOptions } from 'unspeech'
 
 import type { Emotion } from '../../constants/emotions'
 
-import { drizzle } from '@proj-nimara/drizzle-duckdb-wasm'
-import { getImportUrlBundles } from '@proj-nimara/drizzle-duckdb-wasm/bundles/import-url-browser'
-import { withBase } from '@proj-nimara/stage-shared'
-import { ThreeScene, useModelStore } from '@proj-nimara/stage-ui-three'
+import { drizzle } from '@proj-airi/drizzle-duckdb-wasm'
+import { getImportUrlBundles } from '@proj-airi/drizzle-duckdb-wasm/bundles/import-url-browser'
+import { withBase } from '@proj-airi/stage-shared'
+import { ThreeScene, useModelStore } from '@proj-airi/stage-ui-three'
 // import { createTransformers } from '@xsai-transformers/embed'
 // import embedWorkerURL from '@xsai-transformers/embed/worker?worker&url'
 // import { embed } from '@xsai/embed'

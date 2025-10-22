@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { Button } from '@proj-nimara/stage-ui/components'
-import { useTwitterStore } from '@proj-nimara/stage-ui/stores/modules/twitter'
-import { FieldCheckbox, FieldInput } from '@proj-nimara/ui'
+import { Button } from '@proj-airi/stage-ui/components'
+import { useTwitterStore } from '@proj-airi/stage-ui/stores/modules/twitter'
+import { FieldCheckbox, FieldInput } from '@proj-airi/ui'
 import { storeToRefs } from 'pinia'
 import { useI18n } from 'vue-i18n'
 

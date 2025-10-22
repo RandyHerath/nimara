@@ -1,8 +1,8 @@
 {
-  "name": "@proj-nimara/font-cjkfonts-allseto",
+  "name": "@proj-airi/font-cjkfonts-allseto",
   "type": "module",
   "version": "0.7.2-beta.3",
-  "description": "Essential CSS for font, cjkfonts 全瀨體, used by Project NIMARA",
+  "description": "Essential CSS for font, cjkfonts å…¨ç€¨é«”, used by Project NIMARA",
   "author": {
     "name": "Creators of cjkFonts",
     "url": "https://cjkfonts.io/"
@@ -11,7 +11,7 @@
   "homepage": "https://cjkfonts.io/blog/cjkfonts_allseto",
   "repository": {
     "type": "git",
-    "url": "https://github.com/moeru-ai/nimara.git",
+    "url": "https://github.com/moeru-ai/airi.git",
     "directory": "packages/font-cjkfonts-allseto"
   },
   "exports": {

@@ -1,4 +1,4 @@
-import type { Card, ccv3 } from '@proj-nimara/ccc'
+import type { Card, ccv3 } from '@proj-airi/ccc'
 
 import { useLocalStorage } from '@vueuse/core'
 import { nanoid } from 'nanoid'

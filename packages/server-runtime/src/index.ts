@@ -1,4 +1,4 @@
-import type { WebSocketEvent } from '@proj-nimara/server-shared/types'
+import type { WebSocketEvent } from '@proj-airi/server-shared/types'
 
 import type { AuthenticatedPeer, Peer } from './types'
 

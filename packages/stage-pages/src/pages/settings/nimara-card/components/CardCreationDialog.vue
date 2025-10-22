@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import type { Card } from '@proj-nimara/ccc'
+import type { Card } from '@proj-airi/ccc'
 
 import kebabcase from '@stdlib/string-base-kebabcase'
 
-import { Button } from '@proj-nimara/stage-ui/components'
-import { useNimaraCardStore } from '@proj-nimara/stage-ui/stores/modules/nimara-card'
-import { FieldInput, FieldValues } from '@proj-nimara/ui'
+import { Button } from '@proj-airi/stage-ui/components'
+import { useNimaraCardStore } from '@proj-airi/stage-ui/stores/modules/nimara-card'
+import { FieldInput, FieldValues } from '@proj-airi/ui'
 import {
   DialogContent,
   DialogOverlay,

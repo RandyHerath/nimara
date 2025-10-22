@@ -1,4 +1,4 @@
-# @proj-nimara/ui-transitions
+# @proj-airi/ui-transitions
 
 <p align="center">
   [<a href="https://proj-nimara-packages-ui-transitions.netlify.app/">Try it</a>]

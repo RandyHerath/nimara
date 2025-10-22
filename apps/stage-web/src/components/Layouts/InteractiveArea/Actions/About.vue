@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { UTCDate } from '@date-fns/utc'
-import { AboutDialog } from '@proj-nimara/stage-ui/components'
+import { AboutDialog } from '@proj-airi/stage-ui/components'
 import { abbreviatedSha, branch, committerDate } from '~build/git'
 import { formatISO9075 } from 'date-fns'
 import { ref } from 'vue'

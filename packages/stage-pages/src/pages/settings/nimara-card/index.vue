@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { ccv3 } from '@proj-nimara/ccc'
+import type { ccv3 } from '@proj-airi/ccc'
 
-import { Alert } from '@proj-nimara/stage-ui/components'
-import { useNimaraCardStore } from '@proj-nimara/stage-ui/stores/modules/nimara-card'
-import { InputFile } from '@proj-nimara/ui'
-import { Select } from '@proj-nimara/ui/components/form'
+import { Alert } from '@proj-airi/stage-ui/components'
+import { useNimaraCardStore } from '@proj-airi/stage-ui/stores/modules/nimara-card'
+import { InputFile } from '@proj-airi/ui'
+import { Select } from '@proj-airi/ui/components/form'
 import { storeToRefs } from 'pinia'
 import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'

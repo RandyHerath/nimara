@@ -41,7 +41,7 @@
 
 > [!NOTE]
 >
-> 我们有一个专门的组织 [@proj-nimara](https://github.com/proj-nimara) 用于所有从 Project NIMARA 诞生的子项目，快来看看吧！
+> 我们有一个专门的组织 [@proj-airi](https://github.com/proj-nimara) 用于所有从 Project NIMARA 诞生的子项目，快来看看吧！
 >
 > RAG（检索增强生成）、记忆系统、嵌入式数据库、图标、Live2D 实用工具等等！
 
@@ -145,7 +145,7 @@ pnpm dev:tamagotchi
 ### 文档站
 
 ```shell
-pnpm -F @proj-nimara/docs dev
+pnpm -F @proj-airi/docs dev
 ```
 
 ## 原生支持的 LLM API 服务来源列表（由 [xsai](https://github.com/moeru-ai/xsai) 驱动）
@@ -185,9 +185,9 @@ pnpm -F @proj-nimara/docs dev
 
 - [`unspeech`](https://github.com/moeru-ai/unspeech): 用于代理 `/audio/transcriptions` 和 `/audio/speech` 的代理服务器实现，类似 LiteLLM 但面向任何 ASR 和 TTS
 - [`hfup`](https://github.com/moeru-ai/hfup): 帮助部署、打包到 HuggingFace Spaces 的工具集
-- [`@proj-nimara/drizzle-duckdb-wasm`](https://github.com/moeru-ai/nimara/tree/main/packages/drizzle-duckdb-wasm/README.md): DuckDB WASM 的 Drizzle ORM driver 驱动
-- [`@proj-nimara/duckdb-wasm`](https://github.com/moeru-ai/nimara/tree/main/packages/duckdb-wasm/README.md): 易于使用的 `@duckdb/duckdb-wasm` 封装
-- [`@proj-nimara/lobe-icons`](https://github.com/proj-nimara/lobe-icons): 为 [lobe-icons](https://github.com/lobehub/lobe-icons) 漂亮的 AI & LLM 图标制作的 Iconify JSON 封装，支持 Tailwind 和 UnoCSS
+- [`@proj-airi/drizzle-duckdb-wasm`](https://github.com/moeru-ai/nimara/tree/main/packages/drizzle-duckdb-wasm/README.md): DuckDB WASM 的 Drizzle ORM driver 驱动
+- [`@proj-airi/duckdb-wasm`](https://github.com/moeru-ai/nimara/tree/main/packages/duckdb-wasm/README.md): 易于使用的 `@duckdb/duckdb-wasm` 封装
+- [`@proj-airi/lobe-icons`](https://github.com/proj-nimara/lobe-icons): 为 [lobe-icons](https://github.com/lobehub/lobe-icons) 漂亮的 AI & LLM 图标制作的 Iconify JSON 封装，支持 Tailwind 和 UnoCSS
 - [NIMARA Factorio](https://github.com/moeru-ai/nimara-factorio): 让 NIMARA 玩 Factorio
 - [Factorio RCON API](https://github.com/nekomeowww/factorio-rcon-api): Factorio 无头服务器控制台的 RESTful API 封装
 - [`autorio`](https://github.com/moeru-ai/nimara-factorio/tree/main/packages/autorio): Factorio 自动化库
@@ -197,7 +197,7 @@ pnpm -F @proj-nimara/docs dev
 - [`demodel`](https://github.com/moeru-ai/demodel): 轻松加速各种推理引擎和模型下载器拉/下载模型或数据集的速度
 - [`inventory`](https://github.com/moeru-ai/inventory): 中心化模型目录和默认服务来源配置的公开 API 服务
 - [MCP Launcher](https://github.com/moeru-ai/mcp-launcher): 易于使用的 MCP 启动器，适用于所有可能的 MCP Server，就像用于模型推理的 Ollama 一样！
-- ~~[`@proj-nimara/elevenlabs`](https://github.com/moeru-ai/nimara/tree/main/packages/elevenlabs): ElevenLabs API 的类型定义~~
+- ~~[`@proj-airi/elevenlabs`](https://github.com/moeru-ai/nimara/tree/main/packages/elevenlabs): ElevenLabs API 的类型定义~~
 
 ```mermaid
 %%{ init: { 'flowchart': { 'curve': 'catmullRom' } } }%%
@@ -205,15 +205,15 @@ pnpm -F @proj-nimara/docs dev
 flowchart TD
   Core("Core")
   Unspeech("unspeech")
-  DBDriver("@proj-nimara/drizzle-duckdb-wasm")
+  DBDriver("@proj-airi/drizzle-duckdb-wasm")
   MemoryDriver("[WIP] Memory Alaya")
-  DB1("@proj-nimara/duckdb-wasm")
-  SVRT("@proj-nimara/server-runtime")
+  DB1("@proj-airi/duckdb-wasm")
+  SVRT("@proj-airi/server-runtime")
   Memory("Memory")
   STT("STT")
   Stage("Stage")
-  StageUI("@proj-nimara/stage-ui")
-  UI("@proj-nimara/ui")
+  StageUI("@proj-airi/stage-ui")
+  UI("@proj-airi/ui")
 
   subgraph NIMARA
     DB1 --> DBDriver --> MemoryDriver --> Memory --> Core
@@ -224,22 +224,22 @@ flowchart TD
 
   subgraph UI_Components
     UI --> StageUI
-    UITransitions("@proj-nimara/ui-transitions") --> StageUI
-    UILoadingScreens("@proj-nimara/ui-loading-screens") --> StageUI
-    FontCJK("@proj-nimara/font-cjkfonts-allseto") --> StageUI
-    FontXiaolai("@proj-nimara/font-xiaolai") --> StageUI
+    UITransitions("@proj-airi/ui-transitions") --> StageUI
+    UILoadingScreens("@proj-airi/ui-loading-screens") --> StageUI
+    FontCJK("@proj-airi/font-cjkfonts-allseto") --> StageUI
+    FontXiaolai("@proj-airi/font-xiaolai") --> StageUI
   end
 
   subgraph Apps
-    Stage --> StageWeb("@proj-nimara/stage-web")
-    Stage --> StageTamagotchi("@proj-nimara/stage-tamagotchi")
-    Core --> RealtimeAudio("@proj-nimara/realtime-audio")
-    Core --> PromptEngineering("@proj-nimara/playground-prompt-engineering")
+    Stage --> StageWeb("@proj-airi/stage-web")
+    Stage --> StageTamagotchi("@proj-airi/stage-tamagotchi")
+    Core --> RealtimeAudio("@proj-airi/realtime-audio")
+    Core --> PromptEngineering("@proj-airi/playground-prompt-engineering")
   end
 
   subgraph Server_Components
-    Core --> ServerSDK("@proj-nimara/server-sdk")
-    ServerShared("@proj-nimara/server-shared") --> SVRT
+    Core --> ServerSDK("@proj-airi/server-sdk")
+    ServerShared("@proj-airi/server-shared") --> SVRT
     ServerShared --> ServerSDK
   end
 
@@ -269,8 +269,8 @@ flowchart TD
   XSAI --> F_AGENT
   XSAI --> MC_AGENT
 
-  Core --> TauriMCP("@proj-nimara/tauri-plugin-mcp")
-  Memory_PGVector("@proj-nimara/memory-pgvector") --> Memory
+  Core --> TauriMCP("@proj-airi/tauri-plugin-mcp")
+  Memory_PGVector("@proj-airi/memory-pgvector") --> Memory
 
   style Core fill:#f9d4d4,stroke:#333,stroke-width:1px
   style NIMARA fill:#fcf7f7,stroke:#333,stroke-width:1px

@@ -1,12 +1,12 @@
 {
-  "name": "@proj-nimara/unplugin-fetch",
+  "name": "@proj-airi/unplugin-fetch",
   "type": "module",
   "version": "0.1.7",
   "private": true,
   "description": "Vite plugin to download files for Project NIMARA tooling.",
   "author": {
     "name": "Project NIMARA Team",
-    "email": "nimara@moeru.ai",
+    "email": "airi@moeru.ai",
     "url": "https://github.com/moeru-ai"
   },
   "license": "MIT",

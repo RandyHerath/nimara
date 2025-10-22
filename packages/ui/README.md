@@ -1,4 +1,4 @@
-# @proj-nimara/ui
+# @proj-airi/ui
 
 A stylized UI component library built with [Reka UI](https://reka-ui.com/).
 
@@ -7,15 +7,15 @@ To preview the components, refer to the [`stage-ui`](../stage-ui) package for in
 ## Usage
 
 ```shell
-ni @proj-nimara/ui -D # from @antfu/ni, can be installed via `npm i -g @antfu/ni`
-pnpm i @proj-nimara/ui -D
-yarn i @proj-nimara/ui -D
-npm i @proj-nimara/ui -D
+ni @proj-airi/ui -D # from @antfu/ni, can be installed via `npm i -g @antfu/ni`
+pnpm i @proj-airi/ui -D
+yarn i @proj-airi/ui -D
+npm i @proj-airi/ui -D
 ```
 
 ```vue
 <script setup lang="ts">
-import { Button } from '@proj-nimara/ui'
+import { Button } from '@proj-airi/ui'
 </script>
 
 <template>

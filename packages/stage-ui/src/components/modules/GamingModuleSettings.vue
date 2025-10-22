@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { StoreGeneric } from 'pinia'
 
-import { FieldCheckbox, FieldInput } from '@proj-nimara/ui'
+import { FieldCheckbox, FieldInput } from '@proj-airi/ui'
 import { storeToRefs } from 'pinia'
 import { useI18n } from 'vue-i18n'
 

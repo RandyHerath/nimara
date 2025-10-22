@@ -10,6 +10,6 @@
     }
   ],
   "installCommand": "pnpm install --frozen-lockfile",
-  "buildCommand": "pnpm --filter=@proj-nimara/stage-web run build",
+  "buildCommand": "pnpm --filter=@proj-airi/stage-web run build",
   "outputDirectory": "apps/stage-web/dist"
 }

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { WidgetStage } from '@proj-nimara/stage-ui/components/scenes'
-import { useLive2d } from '@proj-nimara/stage-ui/stores/live2d'
+import { WidgetStage } from '@proj-airi/stage-ui/components/scenes'
+import { useLive2d } from '@proj-airi/stage-ui/stores/live2d'
 import { storeToRefs } from 'pinia'
 import { computed, ref, watch } from 'vue'
 

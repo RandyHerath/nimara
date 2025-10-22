@@ -2,7 +2,7 @@
 import type { AssistantMessage, SystemMessage, ToolMessage, Message as UpstreamMessage, UserMessage } from '@xsai/shared-chat'
 import type { Element, Root } from 'xast'
 
-import { Input, Textarea } from '@proj-nimara/ui'
+import { Input, Textarea } from '@proj-airi/ui'
 import { useLocalStorage } from '@vueuse/core'
 import { streamText } from '@xsai/stream-text'
 import { ref, toRaw } from 'vue'
@@ -52,7 +52,7 @@ const capabilityComponentCalling = ''
   + `<component_call><component_name>$componentName</component_name>
 \`\`\`json
 <component_props>$componentProps</component_props>
-\`\`\`</component▁call>\n`
+\`\`\`</component_call>\n`
 
 const capabilities = [
   { name: 'Component Calling', description: capabilityComponentCalling, inject: async () => `<components>

@@ -17,7 +17,7 @@ import type {
   VoiceProviderWithExtraOptions,
 } from 'unspeech'
 
-import { isUrl } from '@proj-nimara/stage-shared'
+import { isUrl } from '@proj-airi/stage-shared'
 import { computedAsync, useLocalStorage } from '@vueuse/core'
 import {
   createAzure,
@@ -96,7 +96,7 @@ export interface ProviderMetadata {
   /**
    * Iconify JSON icon name for the provider.
    *
-   * Icons are available for most of the AI provides under @proj-nimara/lobe-icons.
+   * Icons are available for most of the AI provides under @proj-airi/lobe-icons.
    */
   icon?: string
   iconColor?: string

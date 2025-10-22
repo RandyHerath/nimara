@@ -1,8 +1,8 @@
 import type { DisplayModel } from './display-models'
 
-import messages from '@proj-nimara/i18n/locales'
+import messages from '@proj-airi/i18n/locales'
 
-import { withBase } from '@proj-nimara/stage-shared'
+import { withBase } from '@proj-airi/stage-shared'
 import { useEventListener, useLocalStorage } from '@vueuse/core'
 import { converter } from 'culori'
 import { defineStore } from 'pinia'

@@ -1,12 +1,12 @@
 {
-  "name": "@proj-nimara/unplugin-live2d-sdk",
+  "name": "@proj-airi/unplugin-live2d-sdk",
   "type": "module",
   "version": "0.1.6",
   "private": true,
   "description": "Vite plugin to download the Live2D Cubism SDK assets for NIMARA tooling.",
   "author": {
     "name": "Project NIMARA Team",
-    "email": "nimara@moeru.ai",
+    "email": "airi@moeru.ai",
     "url": "https://github.com/moeru-ai"
   },
   "license": "MIT",

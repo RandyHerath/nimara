@@ -1,5 +1,5 @@
 {
-  "name": "@proj-nimara/nimara-plugin-claude-code",
+  "name": "@proj-airi/nimara-plugin-claude-code",
   "type": "module",
   "version": "0.7.2-beta.3",
   "private": true,
@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@guiiai/logg": "catalog:",
-    "@proj-nimara/server-sdk": "workspace:*",
+    "@proj-airi/server-sdk": "workspace:*",
     "cac": "^6.7.14",
     "debug": "^4.4.3",
     "destr": "^2.0.5",

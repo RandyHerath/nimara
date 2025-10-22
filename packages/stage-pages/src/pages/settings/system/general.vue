@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { all } from '@proj-nimara/i18n'
-import { useSettings } from '@proj-nimara/stage-ui/stores/settings'
-import { FieldCheckbox, FieldSelect } from '@proj-nimara/ui'
+import { all } from '@proj-airi/i18n'
+import { useSettings } from '@proj-airi/stage-ui/stores/settings'
+import { FieldCheckbox, FieldSelect } from '@proj-airi/ui'
 import { useDark } from '@vueuse/core'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useDisplayModelsStore } from '@proj-nimara/stage-ui/stores/display-models'
-import { useOnboardingStore } from '@proj-nimara/stage-ui/stores/onboarding'
-import { useSettings } from '@proj-nimara/stage-ui/stores/settings'
+import { useDisplayModelsStore } from '@proj-airi/stage-ui/stores/display-models'
+import { useOnboardingStore } from '@proj-airi/stage-ui/stores/onboarding'
+import { useSettings } from '@proj-airi/stage-ui/stores/settings'
 import { defineInvoke, defineInvokeHandler } from '@unbird/eventa'
 import { createContext } from '@unbird/eventa/adapters/electron/renderer'
 import { storeToRefs } from 'pinia'
