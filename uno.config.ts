@@ -2,13 +2,48 @@ import type { WebFontMeta } from '@unocss/preset-web-fonts'
 import type { Preset, PresetOrFactoryAwaitable } from 'unocss'
 
 import { setDefaultAutoSelectFamilyAttemptTimeout } from 'node:net'
+import { resolve } from 'node:path'
+import { pathToFileURL } from 'node:url'
 
 import { createExternalPackageIconLoader } from '@iconify/utils/lib/loader/external-pkg'
-import { presetChromatic } from '@proj-airi/unocss-preset-chromatic'
 import { colorToString } from '@unocss/preset-mini/utils'
 import { defineConfig, mergeConfigs, presetAttributify, presetIcons, presetTypography, presetWind3, transformerDirectives, transformerVariantGroup } from 'unocss'
 import { presetScrollbar } from 'unocss-preset-scrollbar'
 import { parseColor } from 'unocss/preset-mini'
+
+async function loadChromaticPreset(): Promise<typeof import('@proj-airi/unocss-preset-chromatic')> {
+  const candidates = [
+    '@proj-airi/unocss-preset-chromatic',
+    pathToFileURL(resolve(import.meta.dirname, 'packages', 'unocss-preset-chromatic', 'dist', 'index.mjs')).href,
+  ]
+
+  let lastError: unknown
+
+  for (const candidate of candidates) {
+    try {
+      const mod = await import(candidate)
+      if ('presetChromatic' in mod)
+        return mod
+
+      lastError = new Error(`Module "${candidate}" does not expose "presetChromatic".`)
+    }
+    catch (error) {
+      lastError = error
+    }
+  }
+
+  const reason = lastError instanceof Error ? lastError.message : String(lastError)
+  console.warn(`[uno.config] Unable to load "@proj-airi/unocss-preset-chromatic" (${reason}). Falling back to noop preset.`)
+
+  return {
+    // provide lightweight fallback
+    presetChromatic: () => ({
+      name: 'preset-chromatic:noop',
+    }),
+  } as typeof import('@proj-airi/unocss-preset-chromatic')
+}
+
+const { presetChromatic } = await loadChromaticPreset()
 
 // On Netlify, building will result in when fetching metadata and fonts from @unocss/preset-web-fonts plugin:
 //
