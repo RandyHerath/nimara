@@ -12,7 +12,7 @@
     "zip": "wxt zip",
     "zip:firefox": "wxt zip -b firefox",
     "compile": "vue-tsc --noEmit",
-    "postinstall": "wxt prepare"
+    "postinstall": "node ./scripts/postinstall.mjs"
   },
   "dependencies": {
     "vue": "^3.5.22"
