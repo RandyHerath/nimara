@@ -1,5 +1,7 @@
 packages:
   - packages/**
+  - '!packages/drizzle-duckdb-wasm/**'
+  - '!packages/duckdb-wasm/**'
   - plugins/**
   - services/**
   - examples/**

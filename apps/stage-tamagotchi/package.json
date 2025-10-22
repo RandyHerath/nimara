@@ -35,7 +35,7 @@
     "@moeru/std": "catalog:",
     "@proj-airi/audio": "workspace:*",
     "@proj-airi/ccc": "workspace:*",
-    "@proj-airi/drizzle-duckdb-wasm": "workspace:*",
+    "@proj-airi/drizzle-duckdb-wasm": "catalog:",
     "@proj-airi/font-cjkfonts-allseto": "workspace:*",
     "@proj-airi/font-xiaolai": "workspace:*",
     "@proj-airi/i18n": "workspace:*",
