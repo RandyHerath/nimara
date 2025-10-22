@@ -13,12 +13,18 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.node.mjs",
       "node": "./dist/index.node.mjs",
       "default": "./dist/index.mjs"
     },
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./node": {
+      "types": "./dist/index.node.d.mts",
+      "default": "./dist/index.node.mjs"
+    }
   },
-  "main": "./dist/index.mjs",
+  "main": "./dist/index.node.mjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.mts",
   "files": [
