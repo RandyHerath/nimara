@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "apps/stage-web/**/*",
+      "src": "apps/stage-web/package.json",
       "use": "@vercel/static-build",
       "config": {
         "distDir": "apps/stage-web/dist"
