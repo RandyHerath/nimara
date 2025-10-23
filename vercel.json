@@ -5,11 +5,11 @@
       "src": "apps/stage-web/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "apps/stage-web/dist"
+        "distDir": "dist"
       }
     }
   ],
   "installCommand": "pnpm install --frozen-lockfile",
   "buildCommand": "pnpm --filter=@proj-airi/stage-web run build",
-  "outputDirectory": "apps/stage-web/dist"
+  "outputDirectory": "dist"
 }
