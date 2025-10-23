@@ -1,4 +1,7 @@
-import { join, resolve } from 'node:path'
+import { Buffer } from 'node:buffer'
+import { createWriteStream, mkdirSync } from 'node:fs'
+import { copyFile, mkdir, stat, writeFile } from 'node:fs/promises'
+import { dirname, join, resolve } from 'node:path'
 import { cwd, env } from 'node:process'
 import { pathToFileURL } from 'node:url'
 
@@ -14,8 +17,9 @@ import Layouts from 'vite-plugin-vue-layouts'
 
 import { templateCompilerOptions } from '@tresjs/core'
 import { LFS, SpaceCard } from 'hfup/vite'
-import { defineConfig } from 'vite'
+import { createLogger, defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
+import { fromBuffer } from 'yauzl'
 
 type PluginFactory = (...args: any[]) => {
   name: string
@@ -56,16 +60,160 @@ async function loadOptionalPlugin(
   }
   catch (error) {
     const reason = error instanceof Error ? error.message : String(error)
-    console.warn(`[stage-web] Optional plugin "${moduleSpecifier}" unavailable (${reason}). Continuing without it.`)
+    console.warn(`[stage-web] Optional plugin "${moduleSpecifier}" unavailable (${reason}). Using lightweight fallback implementation.`)
 
-    return (() => ({
-      name: `noop:${moduleSpecifier}`,
-    })) as PluginFactory
+    return createFallbackPlugin(moduleSpecifier) as PluginFactory
   }
 }
 
 const Download = await loadOptionalPlugin('@proj-airi/unplugin-fetch/vite', 'Download')
 const DownloadLive2DSDK = await loadOptionalPlugin('@proj-airi/unplugin-live2d-sdk/vite', 'DownloadLive2DSDK')
+
+function createFallbackPlugin(moduleSpecifier: string): PluginFactory {
+  if (moduleSpecifier === '@proj-airi/unplugin-fetch/vite') {
+    return (url: string, filename: string, destination: string) => ({
+      name: `fallback-download:${filename}`,
+      async configResolved(config) {
+        const logger = createLogger()
+        const cacheDir = resolve(config.root, '.cache')
+        const publicDir = resolve(config.root, 'public')
+        const cachePath = resolve(cacheDir, destination, filename)
+        const publicPath = resolve(publicDir, destination, filename)
+
+        if (!await pathExists(cachePath)) {
+          logger.info(`[fallback] Downloading ${filename} from ${url}...`)
+          const response = await fetch(url)
+          if (!response.ok)
+            throw new Error(`Failed to download "${url}" (${response.status} ${response.statusText})`)
+          const buffer = Buffer.from(await response.arrayBuffer())
+          await mkdir(dirname(cachePath), { recursive: true })
+          await writeFile(cachePath, buffer)
+        }
+
+        if (!await pathExists(publicPath)) {
+          await mkdir(dirname(publicPath), { recursive: true })
+          await copyFile(cachePath, publicPath)
+        }
+      },
+    })
+  }
+
+  if (moduleSpecifier === '@proj-airi/unplugin-live2d-sdk/vite') {
+    return (options?: { from?: string }) => ({
+      name: 'fallback-download-live2d-sdk',
+      async configResolved(config) {
+        const logger = createLogger()
+        const from = options?.from ?? 'https://cubism.live2d.com/sdk-web/bin/CubismSdkForWeb-5-r.3.zip'
+        const cacheDir = resolve(config.root, '.cache')
+        const publicDir = resolve(config.root, 'public')
+        const cacheRoot = resolve(cacheDir, 'assets', 'js', 'CubismSdkForWeb-5-r.3')
+        const publicRoot = resolve(publicDir, 'assets', 'js', 'CubismSdkForWeb-5-r.3')
+        const cacheFile = resolve(cacheRoot, 'Core', 'live2dcubismcore.min.js')
+        const publicFile = resolve(publicRoot, 'Core', 'live2dcubismcore.min.js')
+
+        if (!await pathExists(cacheFile)) {
+          logger.info('[fallback] Downloading Live2D Cubism SDK...')
+          const response = await fetch(from)
+          if (!response.ok)
+            throw new Error(`Failed to download Live2D SDK from "${from}" (${response.status} ${response.statusText})`)
+          const buffer = Buffer.from(await response.arrayBuffer())
+          await unzipTo(buffer, resolve(cacheDir, 'assets', 'js'))
+        }
+
+        if (!await pathExists(publicFile)) {
+          await mkdir(resolve(publicRoot, 'Core'), { recursive: true })
+          await copyFile(cacheFile, publicFile)
+        }
+      },
+    })
+  }
+
+  return (() => ({
+    name: `noop:${moduleSpecifier}`,
+  })) as PluginFactory
+}
+
+async function pathExists(target: string): Promise<boolean> {
+  try {
+    await stat(target)
+    return true
+  }
+  catch (error) {
+    if (isENOENTError(error))
+      return false
+    throw error
+  }
+}
+
+function isENOENTError(error: unknown): error is NodeJS.ErrnoException {
+  return Boolean(error && typeof error === 'object' && 'code' in error && (error as NodeJS.ErrnoException).code === 'ENOENT')
+}
+
+async function unzipTo(buffer: Buffer, destination: string): Promise<void> {
+  await new Promise<void>((resolvePromise, reject) => {
+    let pending = 0
+    let finishedReading = false
+
+    function maybeResolve() {
+      if (finishedReading && pending === 0)
+        resolvePromise()
+    }
+
+    fromBuffer(buffer, { lazyEntries: true }, (err, zipFile) => {
+      if (err) {
+        reject(err)
+        return
+      }
+      if (!zipFile) {
+        resolvePromise()
+        return
+      }
+      zipFile.readEntry()
+      zipFile.on('entry', (entry) => {
+        const outputPath = resolve(destination, entry.fileName)
+        if (entry.fileName.endsWith('/')) {
+          mkdirSync(outputPath, { recursive: true })
+          zipFile.readEntry()
+          return
+        }
+
+        mkdirSync(dirname(outputPath), { recursive: true })
+        pending++
+        zipFile.openReadStream(entry, (streamErr, readStream) => {
+          if (streamErr || !readStream) {
+            pending--
+            zipFile.close()
+            reject(streamErr || new Error('Failed to read zip entry stream.'))
+            return
+          }
+
+          const fileStream = createWriteStream(outputPath)
+          readStream.pipe(fileStream)
+          fileStream.on('error', (writeErr) => {
+            pending--
+            zipFile.close()
+            reject(writeErr)
+          })
+          fileStream.on('finish', () => {
+            pending--
+            maybeResolve()
+            zipFile.readEntry()
+          })
+        })
+      })
+
+      zipFile.on('end', () => {
+        finishedReading = true
+        maybeResolve()
+      })
+
+      zipFile.on('error', (zipErr) => {
+        zipFile.close()
+        reject(zipErr)
+      })
+    })
+  })
+}
 
 export default defineConfig({
   optimizeDeps: {
