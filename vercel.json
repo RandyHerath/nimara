@@ -11,5 +11,15 @@
   ],
   "installCommand": "pnpm install --frozen-lockfile",
   "buildCommand": "pnpm --filter=@proj-airi/stage-web run build",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/remote-assets/page-external-data/js/script.js",
+      "destination": "https://plausible.io/js/script.js"
+    },
+    {
+      "source": "/api/v1/page-external-data/submit",
+      "destination": "https://plausible.io/api/event"
+    }
+  ]
 }
